@@ -17,13 +17,6 @@
 	/* DB table to use */
 	$sTable = "cod_orders";
 	
-	$gaSql['link'] =  mysql_pconnect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) or
-		die( 'Could not open connection to server' );
-	
-	mysql_select_db( $gaSql['db'], $gaSql['link'] ) or 
-		die( 'Could not select database '. $gaSql['db'] );
-	
-	
 	/* 
 	 * Paging
 	 */
