@@ -9,7 +9,7 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
-		$aColumns = array( 'id', 'restaurant_name', 'owner_name', 'email', 'password', 'contact', 'outlets', 'address', 'cost_for_2', 'service', 'sampling', 'resampling', 'ordering', 'last_call', 'last_conversation', 'remark' );
+	$aColumns = array( 'id', 'restaurant_name', 'owner_name', 'email', 'password', 'contact', 'outlets', 'address', 'cost_for_2', 'service', 'sampling', 'resampling', 'ordering', 'last_call', 'last_conversation', 'remark' );
 
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
@@ -17,30 +17,6 @@
 	
 	/* DB table to use */
 	$sTable = "adurzone";
-	
-	/* Database connection information */
-	$gaSql['user']       = "adurcupc";
-	$gaSql['password']   = "1its2n@t3secret";
-	$gaSql['db']         = "adurcupc_stuffbin";
-	$gaSql['server']     = "localhost";
-	
-	/* REMOVE THIS LINE (it just includes my SQL connection user/pass) */
-	
-	
-	
-	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	 * If you just want to use the basic configuration for DataTables with PHP server-side, there is
-	 * no need to edit below this line
-	 */
-	
-	/* 
-	 * MySQL connection
-	 */
-	$gaSql['link'] =  mysql_pconnect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) or
-		die( 'Could not open connection to server' );
-	
-	mysql_select_db( $gaSql['db'], $gaSql['link'] ) or 
-		die( 'Could not select database '. $gaSql['db'] );
 	
 	
 	/* 
