@@ -1,0 +1,6 @@
+[16-Dec-2015 23:24:40 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '' , function() use ($app) {' (T_CONSTANT_ENCAPSED_STRING) in /home/adurcupc/public_html/API/v2/index.php on line 476
+[16-Dec-2015 23:26:01 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '' , function() use ($app) {' (T_CONSTANT_ENCAPSED_STRING) in /home/adurcupc/public_html/API/v2/index.php on line 476
+[16-Dec-2015 23:26:04 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '' , function() use ($app) {' (T_CONSTANT_ENCAPSED_STRING) in /home/adurcupc/public_html/API/v2/index.php on line 476
+[16-Dec-2015 23:26:36 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '' , function() use ($app) {' (T_CONSTANT_ENCAPSED_STRING) in /home/adurcupc/public_html/API/v2/index.php on line 476
+[16-Dec-2015 23:27:16 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '' , function() use ($app) {' (T_CONSTANT_ENCAPSED_STRING) in /home/adurcupc/public_html/API/v2/index.php on line 476
+[24-Dec-2015 01:38:57 Asia/Calcutta] PHP Fatal error:  Cannot redeclare DbHandler::pdoSet() in /home/adurcupc/public_html/API/include/DbHandler.php on line 360

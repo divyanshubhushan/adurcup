@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /uploads/
+Disallow: /restaurants_img/
+Disallow: /include/
+Disallow: /img/
+Disallow: /images/
+Disallow: /server/
+Disallow: /admin/
+

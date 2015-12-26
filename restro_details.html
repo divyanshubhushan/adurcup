@@ -1,0 +1,1193 @@
+
+<!DOCTYPE html>
+<html class="noIE" lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Adurcup.com</title>
+	<meta name="description" content="shop your disposables with best quality at affordable prices."/>
+	<meta name="keywords" content="shop your disposables, disposables,disposables at affordable prices, adurcup, adurcup.com"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="css/login_popup.css" rel="stylesheet">
+	<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" >
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap-select.css">
+	<link href="css/select2.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="dist/css/magnific-popup.css"> 
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="dist/css/bootstrapValidator.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+
+	<script src="js/modernizr.custom2.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.form.min.js"></script>
+	<script type="text/javascript" src="js/jquery.form.js"></script>
+
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="dist/js/bootstrapValidator.js" type="text/javascript"></script>
+
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+	<link href="css/minified.css" rel="stylesheet">
+
+	<script type="text/javascript" src="dist/js/bootstrap-select.js"></script>
+	<script src="js/modernizr.min.js"></script>
+	<script src="js/select2.js"></script>
+
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/harshit.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	<script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<style>
+
+	 #map-canvas {
+        overflow: hidden;
+        height: 160px;
+     }
+        /* use navbar-wrapper to wrap navigation bar, the purpose is to overlay navigation bar above slider */
+        .navbar-wrapper {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 50px;
+        }
+        .navbar-wrapper > .container {
+            padding: 0;
+        }
+        .infobar {
+            position: absolute;
+            top: 418px;
+            left: 0;
+            width: 100%;
+        }
+        .infobar > .container {
+            padding: 0;
+            width: 100%;
+        }
+        .black {
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+        .black > .container {
+            padding: 0;
+            width: 100%;
+        }
+
+        #circle {
+            border-radius: 50% 50% 50% 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        #icon {
+            border-radius: 50% 50% 50% 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .wrapper {
+        position: relative;
+        background: #fff;
+        overflow-x: hidden;
+        padding:2em 0 0 0;
+        }
+
+        .image-wrapper {
+            position: relative;
+        }
+
+        .image-wrapper .image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .image-wrapper.first:before {
+            content: '';
+            display: block;
+            width: 2000%;
+            height: 100%;
+            position: absolute;
+            left: -1000%;
+            top: 0;
+            z-index: 1;
+            background: #fff url("img/image-wrapper.svg");
+        }
+
+        @media all and (max-width: 768px ){
+            .navbar-wrapper {
+                position: relative;
+                top: 0px;
+            }
+        }
+            /* jssor slider arrow navigator skin 03 css */
+            /*
+            .jssora03l                  (normal)
+            .jssora03r                  (normal)
+            .jssora03l:hover            (normal mouseover)
+            .jssora03r:hover            (normal mouseover)
+            .jssora03l.jssora03ldn      (mousedown)
+            .jssora03r.jssora03rdn      (mousedown)
+            */
+            .jssora03l, .jssora03r {
+                display: block;
+                position: absolute;
+                /* size of arrow element */
+                width: 55px;
+                height: 55px;
+                cursor: pointer;
+                background: url(img/a21.png) no-repeat;
+                overflow: hidden;
+            }
+            .jssora03l { background-position: -3px -33px; }
+            .jssora03r { background-position: -63px -33px; }
+            .jssora03l:hover { background-position: -123px -33px; }
+            .jssora03r:hover { background-position: -183px -33px; }
+            .jssora03l.jssora03ldn { background-position: -243px -33px; }
+            .jssora03r.jssora03rdn { background-position: -303px -33px; }
+
+                /* jssor slider arrow navigator skin 21 css */
+                /*
+                .jssora21l                  (normal)
+                .jssora21r                  (normal)
+                .jssora21l:hover            (normal mouseover)
+                .jssora21r:hover            (normal mouseover)
+                .jssora21l.jssora21ldn      (mousedown)
+                .jssora21r.jssora21rdn      (mousedown)
+                */
+                .jssora21l, .jssora21r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 55px;
+                    height: 55px;
+                    cursor: pointer;
+                    background: url(img/a21.png) center center no-repeat;
+                    overflow: hidden;
+                }
+                .jssora21l { background-position: -3px -33px; }
+                .jssora21r { background-position: -63px -33px; }
+                .jssora21l:hover { background-position: -123px -33px; }
+                .jssora21r:hover { background-position: -183px -33px; }
+                .jssora21l.jssora21ldn { background-position: -243px -33px; }
+                .jssora21r.jssora21rdn { background-position: -303px -33px; }
+
+
+	.nav-tabs > li > a{
+		padding: 1em 1em;
+	}
+
+
+	.wrap{
+		width: 700px;
+		margin: 10px auto;
+		padding: 10px 15px;
+		background: white;
+		border: 2px solid #DBDBDB;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		text-align: center;
+		overflow: hidden;
+	}
+	#preview {
+		color: red;
+	}
+	#preview img{
+		margin-top: 0px;
+		max-width: 100%;
+		border: 0;
+		border-radius: 3px;
+		-webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .27);
+		box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .27);
+		overflow: hidden;
+	}
+	input[type="submit"]{
+		border-radius: 10px;
+		background-color: #61B3DE;
+		border: 0;
+		color: white;
+		font-weight: bold;
+		font-style: italic;
+		padding: 6px 15px 5px;
+		cursor: pointer;
+	}
+	</style>
+	<script type="text/javascript">
+	function submitForm() {
+        // However you need to submit the form
+
+        document.getElementById("button").click(); // Or whatever
+    }
+    function submitForm2() {
+        // However you need to submit the form
+
+        document.getElementById("button2").click(); // Or whatever
+    }
+    function submitForm3() {
+        // However you need to submit the form
+
+        document.getElementById("button3").click(); // Or whatever
+    }
+    </script>
+
+    <script>
+    function chooseFile() {
+    	$("#uploadImage").click();
+    }
+
+    function chooseFile2() {
+    	$("#uploadImage2").click();
+    }
+    function upload_images() {
+    	$("#uploadImage3").click();
+    }
+
+    function checkCaptcha(value, validator) {
+        // Determine the numbers which are generated in captchaOperation
+        var items = $('#captchaOperation').html().split(' '),
+        sum   = parseInt(items[0]) + parseInt(items[2]);
+        return value == sum;
+    }
+    </script>
+
+
+    <script type="text/javascript">
+    function repositionCover() {
+    	$('.cover-wrapper').hide();
+    	$('.cover-resize-wrapper').show();
+    	$('.cover-resize-buttons').show();
+    	$('.default-buttons').hide();
+    	$('.screen-width').val($('.cover-resize-wrapper').width());
+    	$('.cover-resize-wrapper img')
+    	.css('cursor', 'move')
+    	.draggable({
+    		scroll: false,
+
+    		axis: "y",
+
+    		cursor: "move",
+
+    		drag: function (event, ui) {
+    			y1 = $('.timeline-header-wrapper').height();
+    			y2 = $('.cover-resize-wrapper').find('img').height();
+
+    			if (ui.position.top >= 0) {
+    				ui.position.top = 0;
+    			}
+    			else
+    				if (ui.position.top <= (y1-y2)) {
+    					ui.position.top = y1-y2;
+    				}
+    			},
+
+    			stop: function(event, ui) {
+    				$('input.cover-position').val(ui.position.top);
+    			}
+    		});
+    }
+
+    function saveReposition() {
+
+    	if ($('input.cover-position').length == 1) {
+    		posY = $('input.cover-position').val();
+    		$('form.cover-position-form').submit();
+    	}
+    }
+
+    function cancelReposition() {
+    	$('.cover-wrapper').show();
+    	$('.cover-resize-wrapper').hide();
+    	$('.cover-resize-buttons').hide();
+    	$('.default-buttons').show();
+    	$('input.cover-position').val(0);
+    	$('.cover-resize-wrapper img').draggable('destroy').css('cursor','default');
+    }
+
+
+    $(function(){
+    	$('.cover-resize-wrapper').height($('.cover-resize-wrapper').width()*0.3);
+
+
+    	$('form.cover-position-form').ajaxForm({
+    		url:  'includes/c.php',
+    		dataType:  'json', 
+    		beforeSend: function() {
+    			$('.cover-progress').html('Repositioning...').fadeIn('fast').removeClass('hidden');
+    		},
+
+    		success: function(responseText) {
+    			if ((responseText.status) == 200) {
+    				$('.cover-wrapper img')
+    				.attr('src', responseText.url + '?' + new Date().getTime())
+    				.load(function () {
+
+    					$('.cover-progress').fadeOut('fast').addClass('hidden').html('');
+    					$('.cover-wrapper').show();
+    					$('.cover-resize-wrapper')
+    					.hide()
+    					.find('img').css('top', 0);
+    					$('.cover-resize-buttons').hide();
+    					$('.default-buttons').show();
+    					$('input.cover-position').val(0);
+    					$('.cover-resize-wrapper img').draggable('destroy').css('cursor','default');
+
+    				});
+    			}
+
+    		}
+    	});
+
+
+    	$("#register_form").click(function(){
+    		$(".modal-body-left").hide();
+    		$(".modal-body-signup-left").show();
+    		$(".login-button").show();
+    		$(".register-button").hide();
+    		$(".modal-title").text('Register Your Account');
+    		$(".modal-body-p").text('Just fill up details and get started!');
+    		return false;
+    	});
+
+        // Going back to Social Forms
+        $("#login_form").click(function(){
+        	$(".modal-body-signup-left").hide();
+
+        	$(".modal-body-left").show();
+        	$(".modal-title").text('Login to Your Account');
+        	$(".modal-body-p").text('Just sign in and get started!!');
+        	return false;
+        });
+
+    });  
+
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript"></script>
+
+<script id="script_e9">
+$(document).ready(function() {
+
+	$('#myModal').modal({
+		backdrop: 'static',
+		keyboard: false,
+	});
+
+
+
+
+	function randomNumber(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	};
+
+                // Generate a sum of two random numbers
+                function generateCaptcha() {
+                	$('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 100), '='].join(' '));
+                };
+
+                generateCaptcha();
+
+                
+
+                $('#reg_forum').bootstrapValidator({
+                	feedbackIcons: {
+                		valid: 'glyphicon glyphicon-ok',
+                		invalid: 'glyphicon glyphicon-remove',
+                		validating: 'glyphicon glyphicon-refresh'
+                	},
+                	fields: {
+
+                		confirmPassword: {
+                			validators: {
+                				identical: {
+                					field: 'password',
+                					message: 'The password and its confirm are not the same'
+                				}
+                			}
+                		}
+                	}
+                });
+
+                $('.selectpicker').selectpicker({
+                	style: 'btn-info',
+                	size: 4   
+                });     
+
+                $("#e9").select2();
+                $("#e8").select2();
+                $("#e7").select2();
+                $("#e6").select2();
+                $("#e5").select2();
+                $("#e11").select2({
+                	placeholder: "Select location",
+                	allowClear: true
+                });
+
+                $('#uplload').tooltip();
+
+                $("#advance").click(function(){
+                	$("#advance_content").toggle(500);
+                });
+
+
+            });
+</script>
+
+
+
+
+<!-- PARTICULAR PAGES CSS FILES -->
+
+
+<link href="css/innerpage.css" rel="stylesheet">
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet"><!-- // PARTICULAR PAGES CSS FILES -->
+<link href="css/responsive.css" rel="stylesheet">
+<link href="css/scrolling-nav.css" rel="stylesheet">
+</head>
+
+
+<body id="page-top">
+	
+	 <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-61830649-1', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
+
+	<div id="page-wrapper">
+		<header id="site-header" role="banner">
+
+			<div class="header-top" style="box-shadow:none;height:0">
+				<div class="container">
+					<div class="row">
+						<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+							<div class="container">
+								<div class="navbar-header page-scroll">
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+
+									<div class="logo">
+										<a href="index.php">
+											<img alt="Porto" width="100" height="45" data-sticky-width="100" data-sticky-height="70" src="img/logo.png">
+										</a>
+									</div>
+
+								</div>
+
+								<!-- Collect the nav links, forms, and other content for toggling -->
+
+								<div class="row">
+
+									<div class="col-xs-12 col-xs-4  collapse navbar-collapse navbar-ex1-collapse" style="float:right;padding-top:10px;">
+										<ul class="actions unstyled clearfix" >
+
+											<li data-toggle="sub-header" data-target="#sub-social">
+												<!-- SOCIAL ICONS -->
+												<a href="#" id="social-icons">
+													<i class="iconfont-bell not-round-icon"></i>
+												</a>
+
+
+												<!-- // SOCIAL ICONS -->
+											</li>
+
+											<li data-toggle="sub-header" data-target="#sub-cart">
+												<!-- SHOPPING CART -->
+												<a href="javascript:void(0);" id="total-cart">
+													<i class="iconfont-shopping-cart not-round-icon"></i>
+												</a>
+
+												<div id="sub-cart" class="sub-header">
+													<div class="cart-header">
+														<span>Your cart is currently empty.</span>
+														<small><a href="cart.php">(See All)</a></small>
+													</div>
+													<ul class="cart-items product-medialist unstyled clearfix"></ul>
+													<div class="cart-footer">
+														<div class="cart-total clearfix">
+															<span class="pull-left uppercase">Total</span>
+															<span class="pull-right total">₹ 0</span>
+														</div>
+														<div class="text-right">
+															<a href="cart.php" class="btn btn-default btn-round view-cart">View Cart</a>
+														</div>
+													</div>
+												</div>
+												<!-- // SHOPPING CART -->
+											</li>
+											  <li >
+                                                    
+    
+                                                        <a href='#' class='use-btn user'  data-target='#login-modal' data-toggle='modal' > <i class='iconfont-user not-round-icon'></i></a>
+                                                    
+                                                   
+                                                    </li>
+										</ul>
+									</div>
+
+									<div class="collapse navbar-collapse navbar-ex1-collapse">
+										<ul class="nav navbar-nav">
+											<li >
+												<a class="active" href="products.html">Categories</a>
+											</li>
+											<li>
+												<a class="" href="zone.php"><!-- <i class="iconfont-plus not-round-icon"></i> -->
+													Add Your Restaurant</a>
+												</li>
+												<li>
+													<a href="contact.php">Contact Us</a>
+												</li>
+												<li>
+													<a class="" href="#">Offers</a>
+												</li>
+												<li>
+													<a class="" href="help.html">Help</a>
+												</li>
+
+											</ul>
+										</div>
+									</div>
+
+									<!-- /.navbar-collapse -->
+
+
+								</div>
+
+								<div class="cart-notification">
+									<ul class="unstyled"></ul>
+								</div>
+								<!-- /.container -->
+							</nav>
+						</div>
+
+					</div>
+
+					<!-- ADD TO CART MESSAGE -->
+
+					<!-- // ADD TO CART MESSAGE -->
+				</div>
+				<!-- // MAIN HEADER -->
+			</header>
+
+
+		      <div class='page-wrapper'  >
+                        <div class='timeline-header-wrapper'>
+                            <div class='cover-container' id="niktin" style="border-radius: 5px;margin: 5px auto 0; ">
+
+                                <div id="yahoo">
+                                        
+                                        <div class='cover-wrapper'>
+                                            <img src='img/tpot_cafe.jpg' class='img-responsive' alt='Cropped Image'>
+                                
+                                        </div>
+                                
+                                               
+
+                                            
+                                                    
+                                    
+                                </div>
+
+                                <div id='img_preview' style='display:none'></div>
+                                <div id='img_preview2' style='display:none'></div>
+                                <nav class='navbar black_nav ' style='margin-bottom: 0px;background:#000;opacity:0.8;border:none;top:-105px'>
+                                    <div class='container'>
+                                                        
+                                                        <p class='details' style='float:left;color:white;margin:9px 0 10px 0;'>
+                                                            <span class='rest_name' style='font-size:30px'>Tpot Cafe </span></br>
+                                                            7, Malviya nagar , delhi</br>
+                                                           Malviya nagar , delhi
+                                                        </p>
+                                                        <p  style='color:white;margin:9px 0 10px 0;float:right' align='center'>
+                                                            <span class='ratings' style='font-size:42px;'>N.A.</span></br>
+                                                            <img class='rating_img' src='img/stars.png'>
+                                                        </p>
+                                    </div>
+                                </nav>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+ 
+
+                <div class="wrapper">
+                    <div class="container" align="center">
+                        <div class="col-md-12" align="center">
+                            
+
+
+                                <!-- Write code for the form here -->
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+               
+<form>              
+			 
+<div class="container" style="background-color:grey">
+    <div class="row" style="margin-bottom:30px" >
+    
+        <div class="col-md-12">
+           <h3 style="color:white">RESTAURANT DETAILS</h3>
+        </div>
+
+        <div class="col-md-5">
+           
+                <div class="form-group"></div>
+                    <label for="name" style="color:white">Restaurant Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                
+                <div class="form-group"></div>
+                    <label for="location" class="control-label" style="color:white">Location</label>
+                    <div class=" location_select">
+                                           <select aria-hidden="true" tabindex="-1" class="js-example-placeholder-single js-states select2-hidden-accessible" style="width:428.3px;">
+                                                <option></option>
+                                               <option value="Delhi NCR">Delhi NCR</option>     
+                                               <option value="New Delhi"> New Delhi</option>
+                                                <option value="ABU ROAD">ABU ROAD</option>
+                                                <option value="Agra Cantt">Agra Cantt</option>
+                                                <option value="AGRA FORT">AGRA FORT</option>
+                                                <option value="AHMEDABAD JN">AHMEDABAD JN</option> 
+                                                <option value="AJMER">AJMER</option>
+                                                <option value="AKOLA JN">AKOLA JN</option>
+                                                <option value="ALLAHABAD JN">ALLAHABAD JN</option>
+                                                <option value="Ambala Cantt Junction">Ambala Cantt Junction</option>
+                                                <option value="BALHARSHAH">BALHARSHAH</option>
+                                                <option value="Bhopal Junction">Bhopal Junction</option>
+                                                <option value="BHUBANESWAR">BHUBANESWAR</option>
+                                                <option value="Bhusaval Junction">Bhusaval Junction</option>
+                                                <option value="BILASPUR JN">BILASPUR JN</option>
+                                                <option value="DAUND JN">DAUND JN</option>
+                                                <option value="Delhi Hazrat Nizamuddin">Delhi Hazrat Nizamuddin</option>
+                                                <option value="GONDIA JN">GONDIA JN</option>
+                                                <option value="GULBARGA">GULBARGA</option>
+                                                <option value="Gwalior Junction">Gwalior Junction</option>
+                                                <option value="Itarsi Junction">Itarsi Junction</option>
+                                                <option value="JABALPUR">JABALPUR</option>
+                                                <option value="JAIPUR">JAIPUR</option>
+                                                <option value="Jhansi Junction">Jhansi Junction</option>
+                                                <option value="KANPUR CENTRAL">KANPUR CENTRAL</option>
+                                                <option value="KATNI">KATNI</option>
+                                                <option value="Khandwa Junction">Khandwa Junction</option>
+                                                <option value="Kota Junction">Kota Junction</option>
+                                                <option value="Madgaon Junction">Madgaon Junction</option>
+                                                <option value="Mathura Junction">Mathura Junction</option>
+                                                <option value="Nasik Road">Nasik Road</option>
+                                               
+                                                <option value="Panvel">Panvel</option>
+                                                <option value="PATHANKOT CANTT">PATHANKOT CANTT</option>
+                                                <option value="PUNE JN">PUNE JN</option>
+                                                <option value="RAIPUR JN">RAIPUR JN</option>
+                                                <option value="Ratlam Junction">Ratlam Junction</option>
+                                                <option value="Ratnagiri">Ratnagiri</option>
+                                                <option value="REWARI">REWARI</option>
+                                                <option value="ROURKELA">ROURKELA</option>
+                                                <option value="Sawai Madhopur Junction">Sawai Madhopur Junction</option>
+                                                <option value="Vadodara Junction">Vadodara Junction</option>
+                                                <option value="Surat">Surat</option>
+                                                <option value="VARANASI JN">VARANASI JN</option>
+                                                <option value="VIJAYAWADA JN">VIJAYAWADA JN</option>
+                                                <option value="VISHAKAPATNAM">VISHAKAPATNAM</option>
+                                                <option value="Warangal JN">Warangal JN</option>
+
+                                             
+                                            </select>
+                                        </div>
+            
+                <div class="form-group"></div>
+                    <label for="address" style="color:white">Address</label>
+                    <textarea type="text" id="address" class="form-control" name="address" rows="3" placeholder="Enter Address"></textarea>
+                
+                <div class="form-group"></div>
+                    <label for="pin" style="color:white">Pincode</label>
+                    <input type="text" class="form-control" id="pin" name="pin" placeholder="Enter Pincode">
+                
+                <div class="form-group"></div>
+                    <label for="year" style="color:white">Established In</label>
+                    <input type="text" class="form-control" id="year" name="year" placeholder="e.g. 2000">
+               
+        </div>
+        
+
+
+
+        <div class="col-md-5 col-md-offset-2">
+           
+                <div class="form-group"></div>
+                    <label for="owner_name" style="color:white">Owner Name</label>
+                    <input type="text" class="form-control" id="owner_name" name="owner_name" placeholder="e.g. Neeraj Kumar">
+                
+                <div class="form-group"></div>
+                    <label for="contact" style="color:white">Contact</label>
+                    <input type="contact" class="form-control" id="contact" name="contact" placeholder="Enter Contact">
+                
+                <div class="form-group"></div>
+                    <label for="logo" style="color:white">Logo</label>
+                    <textarea type="text" id="logo" name="logo" class="form-control" rows="3" placeholder="Enter Address"></textarea>
+                
+                <div class="form-group"></div>
+                    <label for="email" style="color:white">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+               
+                <div class="form-group"></div>
+                    <label for="tag" style="color:white">Tag Line</label>
+                    <input type="text" class="form-control" id="tag" name="tag" placeholder="Enter Tag Line">
+               
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="container" style="background-color:grey; margin-top:30px" >
+    <div class="row" style="margin-bottom:30px">
+    
+        <div class="col-md-12">
+           <h3 style="color:white">LINKS AND PASSWORD</h3>
+        </div>
+
+        <div class="col-md-5">
+            
+                <div class="form-group"></div>
+                    <label for="zomato" style="color:white">Zomato Link</label>
+                    <input type="text" class="form-control" name="zomato" id="zomato" placeholder="Enter Zomato Link">
+               
+                <div class="form-group"></div>
+                    <label for="pass" style="color:white">New Password</label>
+                    <input type="paswsword" class="form-control" id="pass" name="pass" placeholder="Enter Password">
+                
+            
+        </div>
+        
+
+
+
+        <div class="col-md-5 col-md-offset-2">
+            
+                <div class="form-group"></div>
+                    <label for="fb" style="color:white">Facebook Link</label>
+                    <input type="text" class="form-control" id="fb" name="fb" placeholder="Enter FB link">
+                
+                <div class="form-group"></div>
+                    <label for="pass" style="color:white">Conform Password</label>
+                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter password again">
+                
+            
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container" style="background-color:grey; margin-top:30px" >
+    <div class="row" style="margin-bottom:30px">
+    
+        <div class="col-md-12">
+           <h3 style="color:white">SERVING DETAILS</h3>
+        </div>
+
+        <div class="col-md-5">
+            
+                <div class="form-group"></div>
+                    <label for="cuisine" style="color:white">Cuisine</label>
+                    <select id="e9" class="select2min" multiple name="taste[]" required="" style="width:428.3px;display: none;">
+                                                    <option value="fast-food">
+                                                        Fast food
+                                                    </option>
+                                                    <option value="desserts">
+                                                        Desserts
+                                                    </option>
+                                                    <option value="street-food">
+                                                        Street Food
+                                                    </option>
+                                                    <option value="bakery">
+                                                        Bakery
+                                                    </option>
+                                                    <option value="icecream">
+                                                        Ice-cream
+                                                    </option>
+                                                    <option value="cafe">
+                                                       Café
+                                                    </option>
+                                                    <option value="north-indian">
+                                                        North Indian
+                                                    </option>
+                                                    <option value="south-indian">
+                                                        South Indian
+                                                    </option>
+                                                    <option value="beverage">
+                                                        Beverage
+                                                    </option>
+                                                    <option value="chinese">
+                                                        Italian
+                                                    </option>
+                                                    <option value="chinese">
+                                                        Chinese
+                                                    </option>
+                                                    <option value="biryani">
+                                                        Biryani
+                                                    </option>
+                                                    <option value="mughlai">
+                                                        Mughlai
+                                                    </option>
+                                                    <option value="pizza">
+                                                        Pizza
+                                                    </option>
+                                                     <option value="thai">
+                                                        Thai
+                                                    </option>
+                                                     <option value="gujarati">
+                                                        Gujarati
+                                                    </option>
+                                                     <option value="rajasthani">
+                                                        Rajasthani
+                                                    </option>
+                                                     <option value="continental">
+                                                        Continental
+                                                    </option>
+                                                     <option value="italian">
+                                                        Italian
+                                                    </option>
+                                                    <option value="asian">
+                                                        Asian
+                                                    </option>
+                                                    <option value="european">
+                                                        European
+                                                    </option>
+                                                    <option value="lebanese">
+                                                        Lebanese
+                                                    </option>
+                                                    <option value="mediterranean">
+                                                         Mediterranean
+                                                    </option>
+                                                    <option value="japanese">
+                                                        japanese
+                                                    </option>
+
+
+
+                                                    
+                                                    
+                                                    <option value="finger-food">
+                                                        Finger Food
+                                                    </option>
+                                                    <option value="mexican">
+                                                        Mexican
+                                                    </option>
+                                                    <option value="indonesian">
+                                                        Indonesian
+                                                    </option>
+                                                </select>
+               
+                <div class="form-group"></div>
+                    <label for="age" style="color:white">Age Group</label>
+                    <select class="form-control"  name="age_group">
+                                                             <option selected="true" style="display:none;">
+                                                                Select Option
+                                                            </option>
+                                                            <option>
+                                                                1-12
+                                                            </option>
+                                                            <option>
+                                                                13-24
+                                                            </option>
+                                                            <option>
+                                                                25-50
+                                                            </option>
+                                                            <option>
+                                                                50-above
+                                                            </option>
+                                                        </select>
+                
+                 <div class="form-group"></div>
+                    <label for="aq" style="color:white">Aquainted With</label>
+                    <select class="form-control"   name="section">
+                                                             <option selected="true"  style="display:none;">
+                                                                Select Option
+                                                            </option>
+                                                            <option>
+                                                                Couple
+                                                            </option>
+                                                            <option>
+                                                                Family
+                                                            </option>
+                                                            <option>
+                                                                Student
+                                                            </option>
+                                                            <option>
+                                                                Professional
+                                                            </option>
+                    </select>
+
+                 <div class="form-group"></div>
+                    <label for="peak" style="color:white">Peak Hours</label>
+                    <div >
+                                                        <select class="form-control" name="busy_hours">
+                                                            <option selected="true" style="display:none;">
+                                                                Select Option
+                                                            </option>
+                                                            <option>
+                                                                 05:00 AM-07:59 AM
+                                                            </option>
+                                                            <option>
+                                                                08:00 AM-11:59 AM
+                                                            </option>
+                                                            <option>
+                                                                12:00 PM-01:59 PM
+                                                            </option>
+                                                            <option>
+                                                                02:00 PM-04:59 PM
+                                                            </option>
+                                                            <option>
+                                                                05:00 PM-07:59 PM
+                                                            </option>
+                                                            <option>
+                                                                08:00 PM-10:59 PM
+                                                            </option>
+                                                            <option>
+                                                                11:00 PM-04:59 AM
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                
+        </div>
+        
+
+
+
+        <div class="col-md-5 col-md-offset-2">
+            
+                <div class="form-group"></div>
+                    <label for="cost" style="color:white">Cost For Two</label>
+                    <input type="password" class="form-control" id="cost" name="cost" placeholder="Enter cost">
+                
+                <div class="form-group"></div>
+                    <label for="service" style="color:white">Service Offered</label>
+                    <select id="e10" multiple name="service[]" class="select2min"   style="width:428.3px; float:left;display: none;" >
+                                                    <option value="dine-in">
+                                                        Dine in
+                                                    </option>
+                                                    <option value="outdoor-seating">
+                                                        Outdoor seating
+                                                    </option>
+                                                    <option value="lounge">
+                                                         Lounge
+                                                    </option>
+                                                    <option value="home-delivery">
+                                                        Home delivery
+                                                    </option>
+                                                    <option value="take-away">
+                                                        Take away
+                                                    </option>
+                                                </select>
+                
+                <div class="form-group"></div>
+                    <label for="peak_s" style="color:white">Peak Season</label>
+                    <select class="form-control" name="max_sale">
+                                                            <option selected="true"  style="display:none;">
+                                                                Select Option
+                                                            </option>
+                                                            <option>
+                                                                Summer (May-Jul)
+                                                            </option>
+                                                            <option>
+                                                                Rainy (Aug-Sep)
+                                                            </option>
+                                                            <option>
+                                                                Autumn (Oct-Nov)
+                                                            </option>
+                                                            <option>
+                                                                Winter (Dec-Feb)
+                                                            </option>
+                                                            <option>
+                                                                Spring (Mar-Jun)
+                                                            </option>
+                                                        </select>
+                
+                <div class="form-group"></div>
+                    <label for="billing" style="color:white">Billing</label>
+                    <select class="form-control" name="sale_type">
+                                                            <option selected="true" style="display:none;">
+                                                                Select Option
+                                                            </option>
+                                                            <option>
+                                                                Software
+                                                            </option>
+                                                            <option>
+                                                                Manual
+                                                            </option>
+                                                        </select>
+                
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container" style="background-color:grey; margin-top:30px" >
+    <div class="row" style="margin-bottom:30px">
+    
+        <div class="col-md-12">
+           <h3 style="color:white">ENGAGEMENTS</h3>
+        </div>
+
+        <div class="col-md-5">
+           
+                <div class="form-group"></div>
+                <label for="print" style="color:white">Print Options</label>
+                <div >
+                     <select id="e8" multiple class="select2min" name="print[]" style="width:428px; display: none;" >
+                             <option value="Newspapers">
+                                                                Newspapers
+                                                            </option>
+                                                            <option value="Magazines">
+                                                                Magazines
+                                                            </option>
+                                                            <option value="Books">
+                                                                Books
+                                                            </option>
+                                                            <option value="None">
+                                                                None
+                                                            </option>
+                                                            
+                                                        </select>                                   
+                </div>
+            
+                <div class="form-group"></div>
+                <label for="name" style="color:white">Entertainment</label>
+                <div >
+                                                        <select id="e5" multiple class="select2min" name="entertainment[]"style="width:428.3px; display: none;" >
+                                                            <option value="Live music performances">
+                                                                Live music performances
+                                                            </option>
+                                                            <option value="Juggling shows">
+                                                                Juggling shows
+                                                            </option>
+                                                            <option value="Karaoke">
+                                                                Karaoke
+                                                            </option>
+                                                            <option value="None">
+                                                                None
+                                                            </option>
+                                                            
+                                                        </select>
+                                                    </div>
+           
+            
+        </div>
+
+
+
+        <div class="col-md-5 col-md-offset-2">
+            
+                <div class="form-group"></div>
+                <label  style="color:white" for="e8">Electronic Options</label>
+                                                    <div >
+                                                        <select id="e6" multiple class="select2min" name="electronic[]" style="width:428px; display: none;" >
+                                                            <option value="TV">
+                                                                TV
+                                                            </option>
+                                                            <option value="Projector">
+                                                                Projector
+                                                            </option>
+                                                            <option value="Radio">
+                                                                Radio
+                                                            </option>
+                                                            <option value="Music System">
+                                                                Music System
+                                                            </option>
+                                                            <option value="None">
+                                                                None
+                                                            </option>
+                                                        </select>
+                                                    </div>
+            
+                <div class="form-group"></div>
+                <label for="name" style="color:white">Other(optional)</label>
+                <input type="password" class="form-control" id="name" placeholder="">
+            
+
+        </div>
+
+    </div>
+</div>
+
+
+
+</form> 
+<footer class="page-footer" style=" margin-top:30px">
+            <!-- WIDGET AREA -->
+            <!-- // WIDGET AREA -->
+            <div class="footer-sub">
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-md-6" align="center">
+                             © 2015 Adurcup.com . All Rights Reserved.
+                        </div>
+                        <div class="col-md-6" align="center">
+                             <a href="http://accelerate.businessworld.in/"><img src="img/home/BW.png"></a>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+
+
+        <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+   
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+
+    </body>
+    </html>
+

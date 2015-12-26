@@ -1,0 +1,165 @@
+@media screen and (max-width:1200px){
+	.device{left:20%;top:-36px;}
+	footer li{margin-right:10%;}
+	.feature-content{width:55%;}
+}
+@media screen and (max-width:991px){
+	.feature-1,.feature-2{margin-bottom:50px;}
+	.device{display:none;}
+	.screenshots ul li{width:50%;}
+	.screenshots-intro{padding:110px 0 100px 0;}
+	.feature-content{width:80%;}
+	.features-slider{height:100%}
+}
+@media screen and (max-width:680px){
+	.feature-content{width:60%;}
+}
+@media screen and (max-width:640px){
+	
+	footer li{display:block;text-align:left;padding:20px 0;border-bottom:dashed 1px #c7cacc;margin-right:0!important;float:none;}
+	nav{margin-top:40px;}
+	.overlay ul{margin-left:0px;}
+	.overlay ul li a{padding:20px 0;min-width:120px;font-size:12px;}
+}
+@media screen and (max-width:465px){
+
+	.footer-sub{
+		font-size: 1em !important;
+	}
+	
+
+	.hero{
+		 position: relative;
+	    padding: 10px 0 10px 0;
+	    min-height: 540px;
+	    background-image:url('../../img/home/hero-01.png');
+	    background-size: 560px 280px;
+	    background-repeat:no-repeat;
+	    background-position:-165px 120px;
+	 
+	    color: #08C;
+	}
+	h1{
+		margin-bottom: 0px !important;
+		margin-top: 0px !important;
+	}
+
+	h2{
+		font-size:1.5em !important;
+	}
+	.features-intro-img{
+		display: none;
+	}
+	.logo{
+		padding-left: 0px !important;
+	}
+	.user{
+		margin: 18px 8px 93px 0px !important;
+		font-size: 11px;
+
+	}
+	.pc_video{
+		top:186px;
+		position: relative;
+		padding: 20px 60px !important;
+	}
+	.mobile_video{
+		display: inline-block;
+		
+	    border: 1px solid #08c;
+	    margin: 20px 10px 10px 30px;
+	    padding: 10px 30px;
+	    background-color: #ffffff;
+	    color: #08c;
+	    font-size: 16px;
+	}
+	
+	.log-btn {
+	    display: inline-block;
+	    margin: 20px 50px 10px 0;
+	    padding: 4px 12px;
+	    background-color: #08c;
+	    color: #fff;
+	    font-size: 16px;
+	}
+	.learn-btn {
+    display: inline-block;
+     position: absolute;
+
+    top: 185px;
+    right: 15px;
+    padding: 10px 20px;
+    background-color: #08c;
+    color: #fff;
+    font-size: 16px;
+	}
+	.offer {
+   
+     position: relative;
+
+    top: 223px;
+    right: 0px;
+    padding: 10px 20px;
+
+    color: #fff;
+    width: 100%;
+	}
+	.learn{
+    display: inline-block;
+    position: absolute;
+    float: left;
+    top: 185px;
+    margin: 0 10px 10px 0;
+    padding: 10px 20px;
+    background-color: #08c;
+    color: #fff;
+    font-size: 16px;
+}
+	.screenshots-intro{padding:70px 0 70px 0;}
+	.hiring_content{
+		width: 94% !important;
+	}
+	.sign_up_modal{
+
+		width: 280px !important;
+	}
+
+
+	.state_info{
+		padding-left: 5px  !important;
+		font-size: 12px !important; 
+	}
+	.nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus{
+		background-color: #DDD;
+	}
+	#register_form{
+		margin-right: 0px !important;
+	}
+	#ad_register_btn{
+		margin-right: 0px !important;
+	}
+	#ad_login_btn{
+		margin-right: 0px !important;
+	}
+	.cl404 h1{font-size:15px;margin:30px 0 45px 0}
+	.error-box{
+		padding-top: 0px !important;
+	}
+	.error-msg{
+		font-size: 1.8em !important;
+	}
+	.error-back{
+		margin-top: 20px !important;
+		font-size: 1.2em !important;
+	}
+	
+	.hero h1{font-size:22px;margin:30px 0 45px 0}
+	.screenshots ul li{width:100%;min-height:100%;float:none;}
+	section.video i{font-size:30px;}
+	section.video h1{font-size:15px;font-weight:400;}
+	section.video{padding:40px;}
+	.feature-content{width:100%;text-align:center;margin-top:20px;}
+	.feature-icon{display:block;margin:0 auto;}
+	blockquote p{width:60%;}
+	.features-slider {padding: 11% 50px 10% 50px;}
+}

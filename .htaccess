@@ -1,0 +1,7 @@
+Options -Indexes 
+ErrorDocument 404 /404.php
+RewriteCond %{HTTP_HOST} ^adurcup.com [NC]
+RewriteRule ^(.*)$ http://www.adurcup.com/$1 [L,R=301,NC]
+RewriteRule ^([^/.]+)/?$ $1.php
+RewriteRule ^products/([a-zA-Z0-9_-]+)$ product.php?id=$1
+RewriteRule ^products/([a-zA-Z0-9_-]+)/$ product.php?id=$1

@@ -1,0 +1,2 @@
+[22-Aug-2015 14:59:37 Asia/Kolkata] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: YES) in /home/adurcupc/public_html/admin/examples_support/orders_editable_ajax.php on line 54
+[16-Sep-2015 03:42:53 UTC] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: YES) in /home/adurcupc/public_html/admin/examples_support/booked_ad_editable_ajax.php on line 17

@@ -1,0 +1,107 @@
+/**** Isotope filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/* End: Recommended Isotope styles */
+
+.nav-tabs > li > a{
+        padding: 1em 1em;
+    }
+     @media (min-width:768px) {
+
+            .container{
+                    width: 1170px ;
+                }
+                .m-t-b{
+                    margin: 10px 0px;
+                }
+                .col-md-3{
+                    width: 25%;
+                }
+
+    }
+
+    body{
+        color: #666;
+    }
+    
+    .wrap{
+        width: 700px;
+        margin: 10px auto;
+        padding: 10px 15px;
+        background: white;
+        border: 2px solid #DBDBDB;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        text-align: center;
+        overflow: hidden;
+    }
+    #preview {
+        color: red;
+    }
+    #preview img{
+        margin-top: 0px;
+        max-width: 100%;
+        border: 0;
+        border-radius: 3px;
+        -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .27);
+        box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .27);
+        overflow: hidden;
+    }
+    input[type="submit"]{
+        border-radius: 10px;
+        background-color: #61B3DE;
+        border: 0;
+        color: white;
+        font-weight: bold;
+        font-style: italic;
+        padding: 6px 15px 5px;
+        cursor: pointer;
+    }
