@@ -3,7 +3,7 @@ admin/include/db_config.php
 aduser/server/membersite_config.php
 aduser/server/config.php
 aduser/server/db_config.php
-API/DbConnect.php
+API/include/DbConnect.php
 include/membersite_config.php
 include/db_config.php
 includes/db.php
