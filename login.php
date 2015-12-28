@@ -155,6 +155,45 @@ if(isset($_POST['ad_regsubmitted']))
         text-align: center;
         overflow: hidden;
     }
+.fragment {
+    font-size: 12px;
+    font-family: tahoma;
+    height: 140px;
+    border: 1px solid #ccc;
+    color: #555;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.fragment:hover {
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+
+}
+
+.fragment img { 
+    float: left;
+    margin-right: 10px;
+}
+
+
+.fragment h3 {
+    padding: 0;
+    margin: 0;
+    color: #369;
+}
+.fragment h4 {
+    padding: 0;
+    margin: 0;
+    color: #000;
+}
+#close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
     </style>
 
 
@@ -365,10 +404,12 @@ if(isset($_POST['ad_regsubmitted']))
 
 
             <div id="login-modal">
+
                                             <div class="modal-dialog sign_up_modal" >
+
                                                 <div class="modal-content">
                                                     <div class="modal-header login_modal_header " style="background-color:#F5F5F5">
-                                                        
+                                                      <span id='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>x</span>
 
                                                         <h2 class="modal-title" id="myModalLabel" style="font-size:1.5em">Login to your account </h2>
                                                         <?php echo isset($response) ? $response: '';?>
@@ -644,7 +685,7 @@ if(isset($_POST['ad_regsubmitted']))
                  });
 
                  $("#rest_reset_link").click(function(e){
-                 	e.preventDefault();
+                  e.preventDefault();
                     $("#rest_login").hide();
                      $("#rest_reset").show();
                      $(".modal-title").text('Reset Password');
