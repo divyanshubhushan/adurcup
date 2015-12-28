@@ -8,7 +8,7 @@
                                                         <?php echo isset($response) ? $response: '';?>
                                                         <!-- CONTACT FORM ALERTS -->
                                                         <div class="alert alert-success" id="mail_sent" style="display: none;">
-                                                          <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                          <button type="button" class="close" data-dismiss="alert">x</button>
                                                           <div class="alert-inner">
                                                             <strong>Thanks,</strong> Your Password is reset successfully. Check your mail.
                                                           </div>
