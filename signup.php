@@ -19,56 +19,181 @@ if(isset($_POST['zone_submitted']))
   
 }
   require_once("includes/post_login.php");
-  require_once("includes/header.php"); 
+  
 
 ?>
 
-                                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Adurcup.com</title>
+    <meta name="description" content="shop your disposables with best quality at affordable prices."/>
+    <meta name="keywords" content="shop your disposables, disposables,disposables at affordable prices, adurcup, adurcup.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href="css/login_popup.css" rel="stylesheet"><!--for login popup css -->
+    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" ><!-- -->
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-select.css"><!-- multiple select and search-->
+    <link href="css/select2.css" rel="stylesheet" type="text/css"><!-- for multiple inputs-->
+   
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"><!-- -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="dist/css/bootstrapValidator.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.validate.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+
+    
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGPKJQ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NGPKJQ');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <div id="page-wrapper">
+        <header id="site-header" role="banner">
+            <div class="header-top" style="box-shadow:none;">
+                <div class="container">
+                    <div class="row">
+                        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                            <div class="container">
+                                <div class="navbar-header page-scroll">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <div class="logo">
+                                        <a href="http://www.adurcup.com">
+                                            <img alt="logo" width="100" height="45" data-sticky-width="100" data-sticky-height="70" src="img/logo.png">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-xs-4  collapse navbar-collapse navbar-ex1-collapse" style="float:right;padding-top:10px;">
+                                        <ul class="actions unstyled clearfix" >
+                                            <li data-toggle="sub-header" data-target="#sub-social">
+                                                <!-- SOCIAL ICONS -->
+                                                <a href="#" id="social-icons">
+                                                    <i class="iconfont-bell not-round-icon"></i>
+                                                </a>
+                                            </li>
+
+                                            <li data-toggle="sub-header" data-target="#sub-cart">
+                                                <!-- SHOPPING CART -->
+                                                <a href="javascript:void(0);" id="total-cart">
+                                                    <i class="iconfont-shopping-cart not-round-icon"></i>
+                                                </a>
+                                                <div id="sub-cart" class="sub-header">
+                                                    <div class="cart-header">
+                                                        <span>Your cart is currently empty.</span>
+                                                        <small><a href="cart">(See All)</a></small>
+                                                    </div>
+                                                    <ul class="cart-items product-medialist unstyled clearfix"></ul>
+                                                    <div class="cart-footer">
+                                                        <div class="cart-total clearfix">
+                                                            <span class="pull-left uppercase">Total</span>
+                                                            <span class="pull-right total">₹ 0</span>
+                                                        </div>
+                                                        <div class="text-right">
+                                                            <a href="cart" class="btn btn-default btn-round view-cart">View Cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- // SHOPPING CART -->
+                                            </li>
+                                            <?php 
+                                            if($fgmembersite->CheckRestLogin()) { ?>
+                                                <div class='btn-group  user' >
+                                                    <a class='btn btn-mini' href='myzone' style='background-color:#F0F0F0'><i class='iconfont-home' style='font-size:16px'></i>
+                                                    </a>
+                                                    <button class='btn btn-mini dropdown-toggle' data-toggle='dropdown'>
+                                                        <span class='caret'></span>
+                                                    </button>
+                                                    <ul class='dropdown-menu'>
+                                                        <li><a href='edit'>Settings</a></li>
+                                                        <li><a href='logout'>Logout</a></li>
+                                                    </ul>
+                                                </div>
+                                                
+                                            <?php  }
+                                            elseif($fgmembersite->CheckAdLogin()) { ?>
+                                                <div class='btn-group  user' >
+                                                    <a class='btn btn-mini' href='myzone' style='background-color:#F0F0F0'><i class='iconfont-home' style='font-size:16px'></i>
+                                                    </a>
+                                                    <button class='btn btn-mini dropdown-toggle' data-toggle='dropdown'>
+                                                        <span class='caret'></span>
+                                                    </button>
+                                                    <ul class='dropdown-menu'>
+                                                        <li><a href='#'>Settings</a></li>
+                                                        <li><a href='logout'>Logout</a></li>
+                                                    </ul>
+                                                </div>
+                                              
+                                            <?php }
+                                            else{ ?>
+                                                <li >
+                                                    <a href='#' class='use-btn user'  data-target='#login-modal' data-toggle='modal' > <i class='iconfont-user not-round-icon'></i></a>
+                                                </li>
+                                            <?php  }?>
+                                        </ul>
+                                    </div>
+                                    <div class="collapse navbar-collapse navbar-ex1-collapse">
                                             <ul class="nav navbar-nav">
                                                 <li >
                                                     <a class="" href="products">Categories</a>
                                                 </li>
                                                 <li>
                                                     <a class="active" href="zone"><!-- <i class="iconfont-plus not-round-icon"></i> -->
-                                                  Add Your Restaurant</a>
+                                                    Add Your Restaurant</a>
                                                 </li>
                                                 <li>
                                                     <a href="contact" >Contact Us</a>
                                                 </li>
-                                            
                                                 <li>
                                                     <a class="" href="help">Help</a>
                                                 </li>
-                                               
-
                                             </ul>
                                         </div>
                                     </div>
-
                                     <!-- /.navbar-collapse -->
-
-                                   
                                 </div>
-
-                                 <div class="cart-notification">
-                                        <ul class="unstyled"></ul>
-                                    </div>
+                                <div class="cart-notification">
+                                    <ul class="unstyled"></ul>
+                                </div>
                                 <!-- /.container -->
                             </nav>
                         </div>
-                        
                     </div>
-
                 </div>
- 
             </header>
-
-
             <div class="container main_container" style="margin-top: 40px; margin-bottom: 0px;">
                 <h1 style="font-family: 'FontAwesome';color:#08c;margin-bottom:0px">
                     ADD YOUR ZONE
                 </h1>
-                <div class="row" style="margin:0px 0px 15px 0px">
+                <div class="row" style="margin:0px 0px 15px 0px" id="crmaco">
                     <div class="row step">
                         <div class="col-sm-4 i_step activestep" id="div1" onclick="javascript: resetActive(event, 33.3, 'step-1'); " style="cursor:pointer">
                             <p style="font-size:20px">
@@ -87,7 +212,7 @@ if(isset($_POST['zone_submitted']))
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                 <div class="row">
                     <div class="progress" id="progress1">
                         <div class="progress progress-striped active">
                             <div class="bar" style="width: 33.3%;">
@@ -95,7 +220,11 @@ if(isset($_POST['zone_submitted']))
                             </div>
                         </div>
                     </div>
+                </div> 
+              <!--  <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
+                </div>-->
                 <form action='<?php echo $fgmembersite->GetSelfScript(); ?>' class="form-horizontal" method='post' id ="registrationForm">
                     <input id='zone_submitted' name='zone_submitted' type='hidden' value='1'>
                     <div class="row setup-content step activeStepInfo" id="step-1">
@@ -106,7 +235,7 @@ if(isset($_POST['zone_submitted']))
                                         <label class="col-sm-4 control-label">Restaurant</label>
                                         <div class="col-sm-8">
                                            
-                                                <input class="form-control" autocomplete="off" placeholder="Start typing your restaurant name.." name="restaurant_name" id="s" onkeyup="autocomplet()" type="text" required="Fill restaurant name">
+                                                <input class="form-control" autocomplete="off" placeholder="Start typing your restaurant name.." name="restaurant_name" id="s" onkeyup="autocomplet()" type="text" required="">
                                                 <ul id="results_ajax" style="padding-left:0px"></ul>
                                             
                                       
@@ -163,7 +292,6 @@ if(isset($_POST['zone_submitted']))
                                                 <option value="Madgaon Junction">Madgaon Junction</option>
                                                 <option value="Mathura Junction">Mathura Junction</option>
                                                 <option value="Nasik Road">Nasik Road</option>
-                                               
                                                 <option value="Panvel">Panvel</option>
                                                 <option value="PATHANKOT CANTT">PATHANKOT CANTT</option>
                                                 <option value="PUNE JN">PUNE JN</option>
@@ -179,8 +307,6 @@ if(isset($_POST['zone_submitted']))
                                                 <option value="VIJAYAWADA JN">VIJAYAWADA JN</option>
                                                 <option value="VISHAKAPATNAM">VISHAKAPATNAM</option>
                                                 <option value="Warangal JN">Warangal JN</option>
-
-                                             
                                             </select>
                                         </div>
                                     </div>
@@ -208,7 +334,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Contact</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="contact" name="contact" placeholder="eg: 9621259774 (dont add 0 or +91)" required="" >
+                                            <input class="form-control" id="contact" name="contact" placeholder="eg: 9621259774 (dont add 0 or +91)" required="required" >
                                         </div>
                                     </div>
                                 </div>
@@ -216,7 +342,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Pincode</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="pincode" name="pincode" type="phone" placeholder="eg:  201308" type="text">
+                                            <input class="form-control" id="pincode" name="pincode" placeholder="eg:  201308" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -260,11 +386,12 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label" style="padding-left:0">Confirm Password</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="confirmpassword" name="confirmpass" type="password" placeholder="Connfirm Password" required="" >
+                                            <input class="form-control" id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm Password" required="" >
                                         </div>
                                     </div>
                                 </div>
-                                <a class="neur" onclick="javascript: set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">Next &rarr;</a>
+                                <button type="button" class="action btn-sky text-capitalize next btn" onclick="btnnxt(); set2Active(event, 67, 'step-2');">Next</button>
+                                <!-- <a class="neur" onclick="javascript: set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">Next &rarr;</a> -->
                             </div>
                         </div>
                     </div>
@@ -522,7 +649,7 @@ if(isset($_POST['zone_submitted']))
                                                 </div>
 
                                             </div>
-                                        	
+                                            
                                             <div class="col-md-6">
                                                 <div class="form-group" style="margin-bottom:5px">
                                                     <label class="col-sm-4 control-label" for="e4">(d) Peak Hours</label>
@@ -578,17 +705,22 @@ if(isset($_POST['zone_submitted']))
                                             </div>
                                         </div>
                                     </div>
-                                </div><a class="neur" onclick="javascript: set3Active(event, 100, 'step-3');" style="float:right;margin:10px 15px;cursor: pointer;">Next &rarr;</a> <a class="neur" onclick="javascript: reset1Active(event, 33, 'step-1');" style="float:right;margin:10px 15px;cursor: pointer;">&larr; Prev</a>
+                                </div>
+                                
+                                <!-- <a class="neur next" onclick="javascript: set3Active(event, 100, 'step-3');" style="float:right;margin:10px 15px;cursor: pointer;">Next &rarr;</a> 
+                                <a class="neur" onclick="javascript: reset1Active(event, 33, 'step-1');" style="float:right;margin:10px 15px;cursor: pointer;">&larr; Prev</a> -->
+                                <button type="button" class="action btn-sky text-capitalize back btn" onclick="btnbck(); reset1Active(event, 33, 'step-1');">Back</button>
+                                <button type="button" class="action btn-sky text-capitalize next btn" onclick="btnnxt(); set3Active(event, 100, 'step-3');">Next</button>
                             </div>
                         </div>
                     </div>
-                    <div class="row setup-content step hiddenStepInfo" id="step-3">
+                    <div class="row step display" id="step-3">
                         <div class="col-xs-12">
                             <div class="col-md-12 well text-center">
                                 <div class="row">
                                 
                                     <div class="col-md-12" style="text-align:center;padding-bottom:20px">
-                                        <label style="font-size:18px" >Customersz Engagementssss</label>
+                                        <label style="font-size:18px" >Customer Engagements</label>
                                     </div>
                                         
                                     
@@ -733,23 +865,34 @@ if(isset($_POST['zone_submitted']))
                                         Let us now redirect you to your profile page.
                                       </div>
                                       <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Got it!</button>
+                                         <button type="button" class="btn btn-default" data-dismiss="modal">Got it!</button> 
                                        
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-
-                                <button class="neur" type="submit" style="float:right;margin:10px 15px">Submit </button> <a class="neur" onclick="javascript: set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">&larr; Prev</a>
+                                
+                                <!-- <button class="neur" type="submit" style="float:right;margin:10px 15px">Submit </button> 
+                                <a class="neur" onclick="javascript: set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">&larr; Prev</a> -->
+                                <button type="button" class="action btn-sky text-capitalize back btn" onclick="btnbck(); set2Active(event, 67, 'step-2');">Back</button>
+                                <button type="submit" class="action btn-hot text-capitalize submit btn">Submit</button>
                             </div>
                         </div>
                     </div>
-
+                    <!-- <div class="row">
+                      <div class="col-sm-12">
+                          <div class="pull-right">
+                            <button type="button" class="action btn-sky text-capitalize back btn" >Back</button>
+                            <button type="button" class="action btn-sky text-capitalize next btn" >Next</button>
+                            <button type="button" class="action btn-hot text-capitalize submit btn">Submit</button>
+                          </div>
+                      </div>
+                    </div> -->
                 </form>
             </div>
-        </div><!-- // SITE MAIN CONTENT -->
+        </div>
         <br>
- <footer class="page-footer">
+        <footer class="page-footer">
             <!-- WIDGET AREA -->
             <!-- // WIDGET AREA -->
             <div class="footer-sub">
@@ -764,330 +907,344 @@ if(isset($_POST['zone_submitted']))
             </div>
         </footer>
         <style>
-.form-horizontal .control-label {
+            .form-horizontal .control-label {
 
-        font-size: 15px;
-        font-weight: 130%;
-        color: #08c;
-        }
-        
-     /*   .navbar-nav li:nth-child(1) > a.active{  
-          color: #ccc;
-        }
-*/
+            font-size: 15px;
+            font-weight: 130%;
+            color: #08c;
+            }
+            
+         /*   .navbar-nav li:nth-child(1) > a.active{  
+              color: #ccc;
+            }
+    */
 
-        @media screen and (max-width:640px){
+            @media screen and (max-width:640px){
 
-            .main_container{
-                margin-top: 80px !important;
+                .main_container{
+                    margin-top: 80px !important;
+
+                }
+                h1{
+                    font-size: 29px;
+                }
+                .cuisiness{
+                    width: 247px !important;
+
+                }
+                .servicee{
+                    width: 247px !important;
+                }
 
             }
-            h1{
-                font-size: 29px;
-            }
-            .cuisiness{
-                width: 247px !important;
 
-            }
-            .servicee{
-                width: 247px !important;
+            .hiddenStepInfo {
+            display: none;
             }
 
-        }
+            .activeStepInfo {
+            display: block !important;
+            }
 
-        .hiddenStepInfo {
-        display: none;
-        }
+            .underline {
+            text-decoration: underline;
+            }
 
-        .activeStepInfo {
-        display: block !important;
-        }
+            .step {
+            margin-top: 27px;
+            }
 
-        .underline {
-        text-decoration: underline;
-        }
+            .progress {
+            position: relative;
+            height: 25px;
+            }
 
-        .step {
-        margin-top: 27px;
-        }
+            .progress > .progress-type {
+            position: absolute;
+            text-align: center;
+            width: 33.3%;
+            left: 0px;
+            font-weight: 800;
+            padding: 3px 30px 2px 10px;
+            color: rgb(255, 255, 255);
+            background-color: rgba(25, 25, 25, 0.2);
+            }
 
-        .progress {
-        position: relative;
-        height: 25px;
-        }
+            .progress > .progress-completed {
+            position: absolute;
+            right: 0px;
+            font-weight: 800;
+            padding: 3px 10px 2px;
+            }
 
-        .progress > .progress-type {
-        position: absolute;
-        text-align: center;
-        width: 33.3%;
-        left: 0px;
-        font-weight: 800;
-        padding: 3px 30px 2px 10px;
-        color: rgb(255, 255, 255);
-        background-color: rgba(25, 25, 25, 0.2);
-        }
+            .step {
+            text-align: center;
+            }
 
-        .progress > .progress-completed {
-        position: absolute;
-        right: 0px;
-        font-weight: 800;
-        padding: 3px 10px 2px;
-        }
+            .i_step {
+            line-height: 50px;
+            background-color: #fff;
+            border: 1px solid #C0C0C0;
+            border-right: none;
+            }
 
-        .step {
-        text-align: center;
-        }
+            .step .col-sm-4:last-child {
+            border: 1px solid #C0C0C0;
+            }
 
-        .i_step {
-        line-height: 50px;
-        background-color: #fff;
-        border: 1px solid #C0C0C0;
-        border-right: none;
-        }
+            .step .col-md-4:first-child {
+            border-radius: 5px 0 0 5px;
+            }
 
-        .step .col-sm-4:last-child {
-        border: 1px solid #C0C0C0;
-        }
+            .step .col-md-4:last-child {
+            border-radius: 0 5px 5px 0;
+            }
 
-        .step .col-md-4:first-child {
-        border-radius: 5px 0 0 5px;
-        }
+            .step .col-md-2:hover {
 
-        .step .col-md-4:last-child {
-        border-radius: 0 5px 5px 0;
-        }
+            cursor: pointer;
+            }
 
-        .step .col-md-2:hover {
+            .step .activestep {
+            color: #fff;
+            height:53px;
+            background: #88BECF;
 
-        cursor: pointer;
-        }
+            vertical-align: middle;
+            border-radius: 5px
+            }
 
-        .step .activestep {
-        color: #fff;
-        height:53px;
-        background: #88BECF;
-
-        vertical-align: middle;
-        border-radius: 5px
-        }
-
-        .step .fa {
-        padding-top: 15px;
-        font-size: 40px;
-        }
-        
-        #page-wrapper{
-        
-        overflow:visible;
-        }
+            .step .fa {
+            padding-top: 15px;
+            font-size: 40px;
+            }
+            
+            #page-wrapper{
+            
+            overflow:visible;
+            }
         </style>
-
+    </body>
     <script type="text/javascript">
-
-        (function ($) {
+    
+        var current = 1;
         
-        
-        	$('.dropdown-toggle').dropdown();
+        var widget      = $(".step");
+        var btnnext     = $(".next");
+        var btnback     = $(".back"); 
+        var btnsubmit   = $(".submit");
 
-        
+        // Init buttons and UI
+        widget.not(':eq(0)').hide();
+       // hideButtons(current);
+        setProgress(current);
 
-            $('.outlet_spinner .btn:first-of-type').on('click', function() {
-            var value= parseInt($('.outlet_spinner input').val(), 10);
-                if (value < 1 ) {
-                      $('.outlet_spinner input').val( 1);
-                } 
-                if (value >= 1 ) {
-                      $('.outlet_spinner input').val( value + 1);
-                } 
-               
-           
-          });
-          $('.outlet_spinner .btn:last-of-type').on('click', function() {
+        // Next button click action
+        function btnnxt(){
+            if(current < widget.length){
+                // Check validation
+                if($("#registrationForm").valid()){
+                    widget.show();
+                    widget.not(':eq('+(current++)+')').hide();
+                    setProgress(current);
+                }
+            }
+          //  hideButtons(current);
+        }
+
+        /* Submit button click
+        btnsubmit.click(function(){
+            alert("Submit button clicked");
+        });*/
+
+
+        // Back button click action
+        function btnbck(){
+            if(current > 1){
+                current = current - 2;
+                if(current < widget.length){
+                    widget.show();
+                    widget.not(':eq('+(current++)+')').hide();
+                    setProgress(current);
+                }
+            }
+           // hideButtons(current);
+        }
+
+        $('#registrationForm').validate({ // initialize plugin
+            ignore:":not(:visible)",            
+            rules: {
+                restaurant_name     : "required",
+                email    : {required : true, email:true},
+                sub_location  : "required",
+                contact  : "required",
+                address  : "required",
+                owner_name : "required",
+                password : "required",
+                confirmpassword: { required : true, equalTo: "#password"},
+            },
+        });
+
+    function set2Active(event, percent, step) {
+            $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
+            $(".progress-completed").text(percent + "%");
+
+            $("div").each(function () {
+                if ($(this).hasClass("activestep")) {
+                    $(this).removeClass("activestep");
+                }
+            });
+             $('#div2').addClass("activestep");
+             $('#step-1').hide();
+            hideSteps();
+            showCurrentStepInfo(step);
+        }
+
+    function set3Active(event, percent, step) 
+        {
+            $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
+            $(".progress-completed").text(percent + "%");
+
+            $("div").each(function () {
+                if ($(this).hasClass("activestep")) {
+                    $(this).removeClass("activestep");
+                }
+            });
+            $('#div3').addClass("activestep");
             
-            var value= parseInt($('.outlet_spinner input').val(), 10);
-
-                if (value <= 1 ) {
-                      $('.outlet_spinner input').val( 1);
-                } 
-                if (value > 1 ) {
-                      $('.outlet_spinner input').val( value - 1);
-                } 
-
-          });
-
-          $('.spinner .btn:first-of-type').on('click', function() {
-            var value= parseInt($('.spinner input').val(), 10);
-                if (value <= 100 ) {
-                      $('.spinner input').val( 100);
-                } 
-                if (value >= 100 && value <= 999 ) {
-                      $('.spinner input').val( value - value%50 + 50);
-                } 
-                if (value >= 1000 && value <= 1999) {
-                     $('.spinner input').val( value - value%100 + 100);
-                } 
-                if (value >= 2000 && value <= 2999) {
-                     $('.spinner input').val( value - value%200 + 200);
-                }
-                if (value >= 3000 && value <= 4999) 
-                {
-                    $('.spinner input').val( value - value%250 + 250);
-                }
-           
-          });
-          $('.spinner .btn:last-of-type').on('click', function() {
-            
-            var value= parseInt($('.spinner input').val(), 10);
-                if (value >= 150 && value <= 1000 ) {
-                      $('.spinner input').val( value - value%50 - 50);
-                } 
-                if (value >= 1100 && value <= 2000) {
-                     $('.spinner input').val( value - value%100 - 100);
-                } 
-                if (value >= 2200 && value <= 3000) {
-                     $('.spinner input').val( value - value%200 - 200);
-                }
-                if (value >= 3250 && value <= 5000) 
-                {
-                    $('.spinner input').val( value - value%250 - 250);
-                }
-
-          });
-        })(jQuery);
-
-
-         function checkCaptcha(value, validator) {
-        // Determine the numbers which are generated in captchaOperation
-        var items = $('#captchaOperation').html().split(' '),
-            sum   = parseInt(items[0]) + parseInt(items[2]);
-        return value == sum;
-    }
-	
+            $('#step-1').hide();
+            $('#step-2').hide();
+           // $('#crmaco').show();
+            hideSteps();
+            showCurrentStepInfo(step);
+        }
 
         function resetActive(event, percent, step) {
-        $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
-        $(".progress-completed").text(percent + "%");
-
-        $("div").each(function () {
-            if ($(this).hasClass("activestep")) {
-                $(this).removeClass("activestep");
+            $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
+            $(".progress-completed").text(percent + "%");
+            $("div").each(function () {
+                if ($(this).hasClass("activestep")) {
+                    $(this).removeClass("activestep");
+                }
+            });
+            if (event.target.className == "col-md-2") {
+                $(event.target).addClass("activestep");
             }
-        });
-
-        if (event.target.className == "col-md-2") {
-            $(event.target).addClass("activestep");
+            else {
+                $(event.target.parentNode).addClass("activestep");
+            }
+            hideSteps();
+            showCurrentStepInfo(step);
         }
-        else {
-            $(event.target.parentNode).addClass("activestep");
-        }
-
-        hideSteps();
-        showCurrentStepInfo(step);
-        }
-
-
-
         function reset1Active(event, percent, step) {
-        $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
-        $(".progress-completed").text(percent + "%");
+            $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
+            $(".progress-completed").text(percent + "%");
 
-        $("div").each(function () {
-            if ($(this).hasClass("activestep")) {
-                $(this).removeClass("activestep");
-            }
-        });
+            $("div").each(function () {
+                if ($(this).hasClass("activestep")) {
+                    $(this).removeClass("activestep");
+                }
+            });
 
-            $('#div1').addClass("activestep");
-
-
-        hideSteps();
-        showCurrentStepInfo(step);
-        }
-        function set2Active(event, percent, step) {
+                $('#div1').addClass("activestep");
 
 
-        $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
-        $(".progress-completed").text(percent + "%");
-
-        $("div").each(function () {
-            if ($(this).hasClass("activestep")) {
-                $(this).removeClass("activestep");
-            }
-        });
-
-
-            $('#div2').addClass("activestep");
-
-
-        hideSteps();
-        showCurrentStepInfo(step);
-        }
-        function reset2Active(event, percent, step) {
-        $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
-        $(".progress-completed").text(percent + "%");
-
-        $("div").each(function () {
-            if ($(this).hasClass("activestep")) {
-                $(this).removeClass("activestep");
-            }
-        });
-
-         $('#div2').addClass("activestep");
-
-        hideSteps();
-        showCurrentStepInfo(step);
-        }
-
-        function set3Active(event, percent, step) 
-        {
-        $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
-        $(".progress-completed").text(percent + "%");
-
-        $("div").each(function () {
-            if ($(this).hasClass("activestep")) {
-                $(this).removeClass("activestep");
-            }
-        });
-
-          $('#div3').addClass("activestep");
-        hideSteps();
-        showCurrentStepInfo(step);
+            hideSteps();
+            showCurrentStepInfo(step);
         }
         
+        function reset2Active(event, percent, step) {
+            $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
+            $(".progress-completed").text(percent + "%");
 
+            $("div").each(function () {
+                if ($(this).hasClass("activestep")) {
+                    $(this).removeClass("activestep");
+                }
+            });
+            $('#div2').addClass("activestep");
+            hideSteps();
+            showCurrentStepInfo(step);
+        }
 
         function hideSteps() {
-        $("div").each(function () {
-            if ($(this).hasClass("activeStepInfo")) {
-                $(this).removeClass("activeStepInfo");
-                $(this).addClass("hiddenStepInfo");
-            }
-        });
+            $("div").each(function () {
+                if ($(this).hasClass("activeStepInfo")) {
+                    $(this).removeClass("activeStepInfo");
+                    $(this).addClass("hiddenStepInfo");
+                }
+            });
         }
 
-        function showCurrentStepInfo(step) {        
-        var id = "#" + step;
-        $(id).addClass("activeStepInfo");
-        }
-
-        $(document).ready(function() {
-
-            $( ".navbar-nav li:nth-child(1) > a" ).removeClass("active");
-            $( ".navbar-nav li:nth-child(2) > a" ).addClass("active");
-
-        });
-     </script> 
-
-    
-        <script src="js/minified.min.js"></script> 
-          <script type="text/javascript" src="dist/js/bootstrap-select.js"></script>
-         <script src="js/checkbox.js"></script> 
-         <script src="js/owl.carousel.js"></script> 
-         <script src="js/contact.js"></script>
         
-         <script src="js/jquery.easing.min.js"></script> 
-         <script src="js/scrolling-nav.js"></script>
-         <?php include("includes/login_popup.php"); ?>
-      
-    </body>
-</html>
+        function showCurrentStepInfo(step) {        
+            var id = "#" + step;
+            $(id).addClass("activeStepInfo");
+        }
+
+
+    // Change progress bar action
+      function setProgress(currstep){
+        var percent = parseFloat(100 / widget.length) * currstep;
+        percent = percent.toFixed();
+        $(".progress-bar").css("width",percent+"%").html(percent+"%");      
+    }
+
+    // Hide buttons according to the current step
+      /*function hideButtons(current){
+        var limit = parseInt(widget.length); 
+
+        $(".action").hide();
+
+        if(current < limit) btnnext.show();
+        if(current > 1) btnback.show();
+        if (current == limit) { 
+            // Show entered values
+            $(".display label.lbl").each(function(){
+                $(this).html($("#"+$(this).data("id")).val());  
+            });
+            btnnext.hide(); 
+            btnsubmit.show();
+        }
+    }*/
+</script>
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-19096935-1', 'auto'); ga('send', 'pageview');
+</script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>     
+    
+    <script src="js/modernizr.custom2.js"></script>
+    
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/script_ajax.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.validate.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="dist/js/bootstrapValidator.js" type="text/javascript"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href="css/minified.css" rel="stylesheet"><!-- main css -->
+
+    <script type="text/javascript" src="dist/js/bootstrap-select.js"></script>
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/select2.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="signupjs.js"></script>
+    <script type="text/javascript" src="js/harshit.js"></script>
+    <script type="text/javascript" src="js/ajax_script2.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+         function checkCaptcha(value, validator) {
+            // Determine the numbers which are generated in captchaOperation
+            var items = $('#captchaOperation').html().split(' '),
+            sum   = parseInt(items[0]) + parseInt(items[2]);
+            return value == sum;
+        }
+    </script>
+</html>  
+
+
