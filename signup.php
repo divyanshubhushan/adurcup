@@ -225,7 +225,7 @@ if(isset($_POST['zone_submitted']))
                   <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 </div>-->
-                <form action='<?php echo $fgmembersite->GetSelfScript(); ?>' class="form-horizontal" method='post' id ="registrationForm">
+                <form action='<?php echo $fgmembersite->GetSelfScript(); ?>' class="form-horizontal" onsubmit="return requireval();" method='post' id ="registrationForm">
                     <input id='zone_submitted' name='zone_submitted' type='hidden' value='1'>
                     <div class="row setup-content step activeStepInfo" id="step-1">
                         <div class="col-sm-12">
@@ -235,7 +235,7 @@ if(isset($_POST['zone_submitted']))
                                         <label class="col-sm-4 control-label">Restaurant</label>
                                         <div class="col-sm-8">
                                            
-                                                <input class="form-control" autocomplete="off" placeholder="Start typing your restaurant name.." name="restaurant_name" id="s" onkeyup="autocomplet()" type="text" required="">
+                                                <input class="form-control" autocomplete="off" placeholder="Start typing your restaurant name.." name="restaurant_name" id="restaurant_name" onkeyup="autocomplet()" type="text" required="">
                                                 <ul id="results_ajax" style="padding-left:0px"></ul>
                                             
                                       
@@ -247,7 +247,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Owner</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="owner_name" name="owner_name" placeholder="eg: Nitin Prakash" required="" type="text">
+                                            <input class="form-control" id="owner_name" name="owner_name" placeholder="eg: Nitin Prakash" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -315,7 +315,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Sublocation</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="sub_location" name="sub_location"  required="">
+                                            <input class="form-control" id="sub_location" name="sub_location">
                                                 
                                         </div>
                                     </div>
@@ -326,7 +326,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Address</label>
                                         <div class="col-sm-8">
-                                            <textarea class="form-control" id="address" name="address" placeholder="eg:M13, Connaught Place , New Delhi" required="" rows="2"></textarea>
+                                            <textarea class="form-control" id="address" name="address" placeholder="eg:M13, Connaught Place , New Delhi" rows="2"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -390,7 +390,7 @@ if(isset($_POST['zone_submitted']))
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="action btn-sky text-capitalize next btn" onclick="btnnxt(); set2Active(event, 67, 'step-2');">Next</button>
+                                <button type="button" class="neur action btn-sky text-capitalize next btn" onclick="set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">Next</button>
                                 <!-- <a class="neur" onclick="javascript: set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">Next &rarr;</a> -->
                             </div>
                         </div>
@@ -709,8 +709,9 @@ if(isset($_POST['zone_submitted']))
                                 
                                 <!-- <a class="neur next" onclick="javascript: set3Active(event, 100, 'step-3');" style="float:right;margin:10px 15px;cursor: pointer;">Next &rarr;</a> 
                                 <a class="neur" onclick="javascript: reset1Active(event, 33, 'step-1');" style="float:right;margin:10px 15px;cursor: pointer;">&larr; Prev</a> -->
-                                <button type="button" class="action btn-sky text-capitalize back btn" onclick="btnbck(); reset1Active(event, 33, 'step-1');">Back</button>
-                                <button type="button" class="action btn-sky text-capitalize next btn" onclick="btnnxt(); set3Active(event, 100, 'step-3');">Next</button>
+                                
+                                <button type="button" class="neur action btn-sky text-capitalize next btn" onclick="set3Active(event, 100, 'step-3');" style="float:right;margin:10px 15px;cursor: pointer;">Next</button>
+                                <button type="button" class="neur action btn-sky text-capitalize back btn" onclick="reset1Active(event, 33, 'step-1');" style="float:right;margin:10px 15px;cursor: pointer;">Back</button>
                             </div>
                         </div>
                     </div>
@@ -874,8 +875,9 @@ if(isset($_POST['zone_submitted']))
                                 
                                 <!-- <button class="neur" type="submit" style="float:right;margin:10px 15px">Submit </button> 
                                 <a class="neur" onclick="javascript: set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">&larr; Prev</a> -->
-                                <button type="button" class="action btn-sky text-capitalize back btn" onclick="btnbck(); set2Active(event, 67, 'step-2');">Back</button>
-                                <button type="submit" class="action btn-hot text-capitalize submit btn">Submit</button>
+                                
+                                <button type="submit" class="neur action btn-hot text-capitalize submit btn" style="float:right;margin:10px 15px">Submit</button>
+                                <button type="button" class="neur action btn-sky text-capitalize back btn" onclick="set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">Back</button>
                             </div>
                         </div>
                     </div>
@@ -1039,8 +1041,10 @@ if(isset($_POST['zone_submitted']))
        // hideButtons(current);
         setProgress(current);
 
+        
+
         // Next button click action
-        function btnnxt(){
+      /*  function btnnxt(){
             if(current < widget.length){
                 // Check validation
                 if($("#registrationForm").valid()){
@@ -1050,7 +1054,7 @@ if(isset($_POST['zone_submitted']))
                 }
             }
           //  hideButtons(current);
-        }
+        } */
 
         /* Submit button click
         btnsubmit.click(function(){
@@ -1059,7 +1063,7 @@ if(isset($_POST['zone_submitted']))
 
 
         // Back button click action
-        function btnbck(){
+       /* function btnbck(){
             if(current > 1){
                 current = current - 2;
                 if(current < widget.length){
@@ -1069,7 +1073,7 @@ if(isset($_POST['zone_submitted']))
                 }
             }
            // hideButtons(current);
-        }
+        }*/
 
         $('#registrationForm').validate({ // initialize plugin
             ignore:":not(:visible)",            
@@ -1089,6 +1093,17 @@ if(isset($_POST['zone_submitted']))
             $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
             $(".progress-completed").text(percent + "%");
 
+            //next button functionality
+            if(current < widget.length){
+                // Check validation
+                if($("#registrationForm").valid()){
+                    widget.show();
+                    widget.not(':eq('+(current++)+')').hide();
+                    setProgress(current);
+                }
+            }
+            // it ends here
+
             $("div").each(function () {
                 if ($(this).hasClass("activestep")) {
                     $(this).removeClass("activestep");
@@ -1105,6 +1120,17 @@ if(isset($_POST['zone_submitted']))
             $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
             $(".progress-completed").text(percent + "%");
 
+            //next button functionality
+          /*  if(current < widget.length){
+                // Check validation
+                if($("#registrationForm").valid()){
+                    widget.show();
+                    widget.not(':eq('+(current++)+')').hide();
+                    setProgress(current);
+                }
+            }*/
+            // it ends here
+
             $("div").each(function () {
                 if ($(this).hasClass("activestep")) {
                     $(this).removeClass("activestep");
@@ -1114,7 +1140,7 @@ if(isset($_POST['zone_submitted']))
             
             $('#step-1').hide();
             $('#step-2').hide();
-           // $('#crmaco').show();
+            $('#crmaco').show();
             hideSteps();
             showCurrentStepInfo(step);
         }
@@ -1140,6 +1166,17 @@ if(isset($_POST['zone_submitted']))
             $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
             $(".progress-completed").text(percent + "%");
 
+            //back button functionality
+            if(current > 1){
+                current = current - 2;
+                if(current < widget.length){
+                    widget.show();
+                    widget.not(':eq('+(current++)+')').hide();
+                    setProgress(current);
+                }
+            }
+            //it ends here
+
             $("div").each(function () {
                 if ($(this).hasClass("activestep")) {
                     $(this).removeClass("activestep");
@@ -1156,6 +1193,17 @@ if(isset($_POST['zone_submitted']))
         function reset2Active(event, percent, step) {
             $(".bar").css("width", percent + "%").attr("aria-valuenow", percent);
             $(".progress-completed").text(percent + "%");
+
+            //back button functionality
+            if(current > 1){
+                current = current - 2;
+                if(current < widget.length){
+                    widget.show();
+                    widget.not(':eq('+(current++)+')').hide();
+                    setProgress(current);
+                }
+            }
+            //it ends here
 
             $("div").each(function () {
                 if ($(this).hasClass("activestep")) {
@@ -1183,12 +1231,17 @@ if(isset($_POST['zone_submitted']))
         }
 
 
-    // Change progress bar action
-      function setProgress(currstep){
-        var percent = parseFloat(100 / widget.length) * currstep;
-        percent = percent.toFixed();
-        $(".progress-bar").css("width",percent+"%").html(percent+"%");      
-    }
+        // Change progress bar action
+        function setProgress(currstep){
+            var percent = parseFloat(100 / widget.length) * currstep;
+            percent = percent.toFixed();
+            $(".progress-bar").css("width",percent+"%").html(percent+"%");      
+        }
+
+        function requireval(){
+            document.getElementById('email').innerHTML="*Please enter a username*";
+            return false;
+        }
 
     // Hide buttons according to the current step
       /*function hideButtons(current){
@@ -1208,6 +1261,21 @@ if(isset($_POST['zone_submitted']))
         }
     }*/
 </script>
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('.next').prop('disabled',true);
+            $('#contact,#email,#restaurant_name,#password,#confirmpassword').keyup(function(){
+                if($('#contact').val().length !=0 && $('#email').val().length !=0 && $('#restaurant_name').val().length !=0 && $('#password').val().length !=0 && $('#confirmpassword').val().length !=0){
+                    $('.next').prop('disabled', false);
+                               
+                }
+                else{
+                    $('.next').prop('disabled',true);
+                    
+                }
+            })
+        });
+    </script>
 <script type="text/javascript">
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-19096935-1', 'auto'); ga('send', 'pageview');
 </script>
@@ -1245,6 +1313,7 @@ if(isset($_POST['zone_submitted']))
             return value == sum;
         }
     </script>
+    
 </html>  
 
 
