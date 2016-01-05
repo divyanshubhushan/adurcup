@@ -35,7 +35,7 @@ if(isset($_POST['zone_submitted']))
     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" ><!-- -->
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-select.css"><!-- multiple select and search-->
     <link href="css/select2.css" rel="stylesheet" type="text/css"><!-- for multiple inputs-->
-   
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"><!-- -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="dist/css/bootstrapValidator.css" rel="stylesheet">
@@ -231,11 +231,11 @@ if(isset($_POST['zone_submitted']))
                         <div class="col-sm-12">
                             <div class="col-sm-12 well text-center">
                                 <div class="col-sm-6">
-                                    <div class="form-group">
+                                    <div class="form-group required">
                                         <label class="col-sm-4 control-label">Restaurant</label>
                                         <div class="col-sm-8">
                                            
-                                                <input class="form-control" autocomplete="off" placeholder="Start typing your restaurant name.." name="restaurant_name" id="restaurant_name" onkeyup="autocomplet()" type="text" required="">
+                                                <input class="form-control" autocomplete="off" placeholder="Start typing your restaurant name.." name="restaurant_name" id="restaurant_name" onkeyup="autocomplet()" type="text" required="required">
                                                 <ul id="results_ajax" style="padding-left:0px"></ul>
                                             
                                       
@@ -330,26 +330,55 @@ if(isset($_POST['zone_submitted']))
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="col-sm-4 control-label">Contact</label>
-                                        <div class="col-sm-8">
-                                            <input class="form-control" id="contact" name="contact" placeholder="eg: 9621259774 (dont add 0 or +91)" required="required" >
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Pincode</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="pincode" name="pincode" placeholder="eg:  201308" type="text">
+                                            <input class="form-control" id="pincode" name="pincode" maxlength="6" placeholder="eg:  201308" type="text">
                                         </div>
                                     </div>
                                 </div>
                                  
                  
                                 
+                                <div class="col-sm-6">
+                                    <div class="form-group required">
+                                        <label class="col-sm-4 control-label">Contact</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="contact" name="contact" maxlength="10" placeholder="eg: 9621259774 (dont add 0 or +91)" required="required" >
+                                        </div>
+                                    </div>
+                                </div>
                                 
+                               
+
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group required">
+                                        <label class="col-sm-4 control-label">Password</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="password" name="password" placeholder="Choose a password" required="" type="password" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group required">
+                                        <label class="col-sm-4 control-label" style="padding-left:0">Confirm Password</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm Password" required="" >
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                 <div class="col-sm-6">
+                                    <div class="form-group required">
+                                        <label class="col-sm-4 control-label">Email-Id</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="email" name="email" placeholder="eg: adurcup@gmail.com" required="" type="email" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Zomato Link</label>
@@ -366,32 +395,10 @@ if(isset($_POST['zone_submitted']))
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="col-sm-4 control-label">Email-Id</label>
-                                        <div class="col-sm-8">
-                                            <input class="form-control" id="email" name="email" placeholder="eg: adurcup@gmail.com" required="" type="email" autocomplete="off">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="col-sm-4 control-label">Password</label>
-                                        <div class="col-sm-8">
-                                            <input class="form-control" id="password" name="password" placeholder="Choose a password" required="" type="password" autocomplete="off">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="col-sm-4 control-label" style="padding-left:0">Confirm Password</label>
-                                        <div class="col-sm-8">
-                                            <input class="form-control" id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm Password" required="" >
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <button type="button" class="neur action btn-sky text-capitalize next btn" onclick="set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">Next</button>
-                                <!-- <a class="neur" onclick="javascript: set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">Next &rarr;</a> -->
+                              <!--  <label class="col-sm-4 control-label" style="padding-left:0">Please fill all the required fields to continue</label>
+                                 <a class="neur" onclick="javascript: set2Active(event, 67, 'step-2');" style="float:right;margin:10px 15px;cursor: pointer;">Next &rarr;</a> -->
                             </div>
                         </div>
                     </div>
@@ -814,7 +821,7 @@ if(isset($_POST['zone_submitted']))
                             
                                 <div class="row" style="margin-top:10px;">
                                      <div class="col-md-10" >
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="col-sm-8 control-label" for="type" style="padding-top:4px;text-align:left;padding-left:45px">Would you like new services/options in your restaurant? Eg: gaming</label>
                                             <div class="col-sm-3" align="left">
                                                 <label class="radio-inline"><input id="new_services" name="new_services" required="" type="radio" value="yes">Yes</label> <label class="radio-inline"><input id="new_services" name="new_services" type="radio" value="no">No</label>
@@ -1016,6 +1023,11 @@ if(isset($_POST['zone_submitted']))
             border-radius: 5px
             }
 
+            .form-group.required .control-label:after {
+              content:"*";
+              color:red;
+            }
+
             .step .fa {
             padding-top: 15px;
             font-size: 40px;
@@ -1098,7 +1110,9 @@ if(isset($_POST['zone_submitted']))
                 // Check validation
                 if($("#registrationForm").valid()){
                     widget.show();
-                    widget.not(':eq('+(current++)+')').hide();
+                    $('#step-3').hide();
+                    current++;
+                   // widget.not(':eq('+(current++)+')').hide();
                     setProgress(current);
                 }
             }
@@ -1172,6 +1186,7 @@ if(isset($_POST['zone_submitted']))
                 if(current < widget.length){
                     widget.show();
                     widget.not(':eq('+(current++)+')').hide();
+                    //$('#step-2').hide();
                     setProgress(current);
                 }
             }
@@ -1262,21 +1277,6 @@ if(isset($_POST['zone_submitted']))
     }*/
 </script>
 <script type="text/javascript">
-        $(document).ready(function(){
-            $('.next').prop('disabled',true);
-            $('#contact,#email,#restaurant_name,#password,#confirmpassword').keyup(function(){
-                if($('#contact').val().length !=0 && $('#email').val().length !=0 && $('#restaurant_name').val().length !=0 && $('#password').val().length !=0 && $('#confirmpassword').val().length !=0){
-                    $('.next').prop('disabled', false);
-                               
-                }
-                else{
-                    $('.next').prop('disabled',true);
-                    
-                }
-            })
-        });
-    </script>
-<script type="text/javascript">
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-19096935-1', 'auto'); ga('send', 'pageview');
 </script>
     <script type="text/javascript" src="js/jquery.min.js"></script>     
@@ -1313,7 +1313,27 @@ if(isset($_POST['zone_submitted']))
             return value == sum;
         }
     </script>
-    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.next').prop('disabled',true);
+            $('#contact,#email,#restaurant_name,#password,#confirmpassword').keyup(function(){
+                if($('#contact').val().length !=0 && $('#email').val().length !=0 && $('#restaurant_name').val().length !=0 && $('#password').val().length !=0 && $('#confirmpassword').val().length !=0){
+                    $('.next').prop('disabled', false);
+                               
+                }
+                else{
+                    $('.next').prop('disabled',true);
+                    
+                }
+            })
+
+            $('#confirmpassword').on('keyup', function () {
+                if ($(this).val() == $('#password').val()) {
+                    $('#message').html('matching').css('color', 'green');
+                } else $('#message').html('not matching').css('color', 'red');
+            });
+        });
+    </script>
 </html>  
 
 
