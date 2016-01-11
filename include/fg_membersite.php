@@ -1331,10 +1331,28 @@ class FGMembersite
         $formvars = array();
        
         $this->CollectZoneSubmission($formvars);
+       
         
+        if(!$this->validatezoneform($formvars))
+        {
+           echo "validation failed";              
+            return false;
+        }
+
+        if(!$this->IsZoneUnique($formvars,"email"))
+        {
+           echo "Already registered.";              
+            return false;
+        }
+
         if(!$this->SaveZoneToDatabase($formvars))
         {
            echo "save to database failed";              // need to edit to return proper error statement
+            return false;
+        }
+
+        if(!$this->SendZoneConfirmationEmail($formvars)){
+            echo "Confirmation mail sending failed.";
             return false;
         }
         /* if(!$this->build_profile($formvars))
@@ -1345,8 +1363,8 @@ class FGMembersite
         /*if(!$this->SendZoneUserConfirmationEmail($formvars))
         {
             return false;
-        }*/
-        $this->SendZoneUserConfirmationEmail($formvars);
+        }
+        $this->SendZoneUserConfirmationEmail($formvars);*/
   
         $this->SendAdminIntimationOnZoneRegComplete($formvars);
         
@@ -1381,7 +1399,7 @@ class FGMembersite
         }          
         $email = $this->SanitizeForSQL($emaill);
         $pwdmd5 = $this->SanitizeForSQL($passwordd);
-        $qry = "SELECT id,restaurant_name,owner_name,contact, email from adurzone where email='$email' and password='$pwdmd5' and confirmreg='y' ";
+        $qry = "SELECT id,restaurant_name,owner_name,contact,confirmreg,email from adurzone where email='$email' and password='$pwdmd5' ";
         
         $result = mysql_query($qry,$this->connection);
         
@@ -1392,6 +1410,11 @@ class FGMembersite
         }
         
         $row = mysql_fetch_assoc($result);
+
+        if($row['confirmreg'] != 'y'){
+            echo "Your account is not activated yet. Please click on the confirmation link send to your mail.";
+            return false;
+        }
         
         
         $_SESSION['restaurant_name']  = $row['restaurant_name'];
@@ -1467,6 +1490,7 @@ class FGMembersite
 
          $formvars['other'] = $this->Sanitize($_POST['other']);
 
+        $formvars['confirmreg'] = $this->MakeConfirmationMd5($formvars['email']);
 
     }
     
@@ -1756,7 +1780,38 @@ class FGMembersite
         return true;
     }
 */
+    function SendZoneConfirmationEmail(&$formvars)
+   {
+       $mailer = new PHPMailer();
+       
+       $mailer->CharSet = 'utf-8';
+       
+       $mailer->AddAddress($formvars['email'],$formvars['name']);
+       
+       $mailer->Subject = "Your registration with ".$this->sitename;
 
+       $mailer->From = $this->GetFromAddress();        
+       
+       $confirmcode = $formvars['confirmcode'];
+       
+       $confirm_url = $this->GetAbsoluteURLFolder().'/confirmreg.php?code='.$confirmcode;
+       
+       $mailer->Body ="Hello ".$formvars['name']."\r\n\r\n".
+       "Thanks for your registration with ".$this->sitename."\r\n".
+       "Please click the link below to confirm your registration.\r\n".
+       "$confirm_url\r\n".
+       "\r\n".
+       "Regards,\r\n".
+       "Webmaster\r\n".
+       $this->sitename;
+
+       if(!$mailer->Send())
+       {
+           $this->HandleError("Failed sending registration confirmation email.");
+           return false;
+       }
+       return true;
+   }
 
 
     function IsZoneUnique($formvars,$fieldname)
@@ -1837,7 +1892,7 @@ class FGMembersite
                 "' . $this->SanitizeForSQL($formvars['electronic']) . '",
                 "' . $this->SanitizeForSQL($formvars['entertainment']) . '",
                 "' . $this->SanitizeForSQL($formvars['other']) . '",
-                "y"
+                "' . $this->SanitizeForSQL($formvars['confirmreg']) . '"
                 )';      
         if(!mysql_query($insert_query))
         {
@@ -1849,7 +1904,7 @@ class FGMembersite
         return true;
     }
     
-    function ConfirmUser()
+    function ConfirmZone()
     {
         if(empty($_GET['code'])||strlen($_GET['code'])<=10)
         {
@@ -1878,35 +1933,18 @@ class FGMembersite
         }   
         $confirmcode = $this->SanitizeForSQL($_GET['code']);
         
-        $result = mysql_query("SELECT * FROM $this->tablename where confirmcode='$confirmcode'");   
+        $result = mysql_query("SELECT * FROM adurzone where confirmreg='$confirmcode'");   
         if(!$result || mysql_num_rows($result) <= 0)
         {
             $this->HandleError("Wrong confirm code.");
             return false;
         }
-        $row = mysql_fetch_assoc($result);
-        $user_rec['applicant_name'] = $row['applicant_name'];
-        $user_rec['email']= $row['email'];
-         $user_rec['company_name']= $row['company_name'];
-          $user_rec['location']= $row['location'];
-           $user_rec['sublocation']= $row['sublocation'];
-            $user_rec['address']= $row['address'];
-             $user_rec['type']= $row['type'];
-              $user_rec['dimension']= $row['dimension'];
-               $user_rec['cost']= $row['cost'];
-                $user_rec['branding_high']= $row['branding_high'];
-                 $user_rec['branding_medium']= $row['branding_medium'];
-                  $user_rec['branding_low']= $row['branding_low'];
-                   $user_rec['consumer_type']= $row['consumer_type'];
-                   $user_rec['peak_seasons']= $row['peak_seasons'];
-                   $user_rec['peak_hours']= $row['peak_hours'];
-                   $user_rec['phone']= $row['phone'];
-                    $user_rec['confirmcode']= $row['confirmcode'];
-                     $user_rec['adminconfirmcode']= $row['adminconfirmcode'];
+        
+        
 
 
         
-        $qry = "Update $this->tablename Set confirmcode='y' Where  confirmcode='$confirmcode'";
+        $qry = "Update adurzone Set confirmreg='y' Where  confirmreg='$confirmcode'";
         
         if(!mysql_query( $qry ,$this->connection))
         {
@@ -2098,7 +2136,32 @@ class FGMembersite
     function GetSelfScript()
     {
         return htmlentities($_SERVER['PHP_SELF']);
-    }    
+    }  
+
+    function validatezoneform(&$formvars){
+
+         if($formvars['email'] == '')
+         {
+            return false;
+         }
+         else
+         {
+            //whether the email format is correct
+            if(preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/", $formvars['email']))
+            {
+                return true;
+            }
+            else
+            {
+               return false;
+            }
+          }
+         //whether the password is blank
+         if($formvars['password'] == '')
+         {
+          return false;
+         }
+    }  
     
     function SafeDisplay($value_name)
     {
