@@ -404,6 +404,46 @@ class FGMembersite
                         
                 }
                 
+
+                function productImages()                     
+                {
+                    if(isset($_GET['id']))
+                    {
+                        if(!$this->DBLogin())
+                        {
+
+                            echo "Database login failed!";
+                            return false;
+                        } 
+
+
+                        $pro_id = $this->SanitizeForSQL($_GET['id']);
+                        $items = array();
+                        $result = mysql_query("SELECT image_src from product_images where product_id='$pro_id'");   
+                        if(!$result || mysql_num_rows($result) <= 0)
+                        {
+                            
+                            return false;
+                        }else{
+                            while($rowdata = mysql_fetch_assoc($result)){
+                               $output = $rowdata['image_src'];
+                                array_push($items, $output);
+                            }
+                            return $items;
+                        }
+
+                        /*$row = mysql_fetch_assoc($result);
+                        $vale1 = array_values($row);
+                        return $vale1;*/
+                    }
+                    else{
+
+                        return false;
+                    }
+                        
+                }
+
+
                 function product_material()                     
                 {
                     if(isset($_GET['id']))
@@ -534,7 +574,7 @@ class FGMembersite
                     item_id,
                     title,
                     thumbnail,
-		    ad_option,
+            ad_option,
                     price,
                     qty,
                     email,
@@ -550,7 +590,7 @@ class FGMembersite
                     "' .$final['id']. '",
                     "' .$final['title']. '",
                     "' .$final['thumbnail']. '",
-		    "' .$final['ad_option']. '",
+            "' .$final['ad_option']. '",
                     "' .$final['price']. '",
                     "' .$final['qty']. '",
                     "' .$email. '",
@@ -726,7 +766,7 @@ class FGMembersite
 
         }
         
-	 function get_cod_orders(){
+     function get_cod_orders(){
 
            if(!$this->DBLogin())
         {

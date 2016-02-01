@@ -235,7 +235,7 @@ if(isset($_POST['zone_submitted']))
                                         <label class="col-sm-4 control-label">Restaurant</label>
                                         <div class="col-sm-8">
                                            
-                                                <input class="form-control" autocomplete="off" placeholder="Start typing your restaurant name.." name="restaurant_name" id="restaurant_name" onkeyup="autocomplet()" type="text" required="required">
+                                                <input class="form-control" autocomplete="off" placeholder="Start typing your restaurant name.." name="restaurant_name" id="restaurant_name" onkeyup="autocomplet()" type="text" required="required"><br>
                                                 <ul id="results_ajax" style="padding-left:0px"></ul>
                                             
                                       
@@ -247,7 +247,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Owner</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="owner_name" name="owner_name" placeholder="eg: Nitin Prakash" type="text">
+                                            <input class="form-control" id="owner_name" name="owner_name" placeholder="eg: Nitin Prakash" type="text"><br>
                                         </div>
                                     </div>
                                 </div>
@@ -315,7 +315,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Sublocation</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="sub_location" name="sub_location">
+                                            <input class="form-control" id="sub_location" name="sub_location"><br>
                                                 
                                         </div>
                                     </div>
@@ -335,7 +335,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Pincode</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="pincode" name="pincode" maxlength="6" placeholder="eg:  201308" type="text">
+                                            <input class="form-control" id="pincode" name="pincode" maxlength="6" placeholder="eg:  201308" type="text"><br>
                                         </div>
                                     </div>
                                 </div>
@@ -346,7 +346,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group required">
                                         <label class="col-sm-4 control-label">Contact</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="contact" name="contact" maxlength="10" placeholder="eg: 9621259774 (dont add 0 or +91)" required="required" >
+                                            <input class="form-control" id="contact" name="contact" maxlength="10" placeholder="eg: 9621259774 (dont add 0 or +91)" required="required" ><br>
                                         </div>
                                     </div>
                                 </div>
@@ -358,7 +358,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group required">
                                         <label class="col-sm-4 control-label">Password</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="password" name="password" placeholder="Choose a password" required="" type="password" autocomplete="off">
+                                            <input class="form-control" id="password" name="password" placeholder="Choose a password" required="" type="password" autocomplete="off"><br>
                                         </div>
                                     </div>
                                 </div>
@@ -366,16 +366,16 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group required">
                                         <label class="col-sm-4 control-label" style="padding-left:0">Confirm Password</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm Password" required="" >
+                                            <input class="form-control" id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm Password" required="" ><br>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                 <div class="col-sm-6">
+                                <div class="col-sm-6">
                                     <div class="form-group required">
                                         <label class="col-sm-4 control-label">Email-Id</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="email" name="email" placeholder="eg: adurcup@gmail.com" required="" type="email" autocomplete="off">
+                                            <input class="form-control" id="email" name="email" placeholder="eg: adurcup@gmail.com" required="" type="email" autocomplete="off"><br>
                                         </div>
                                     </div>
                                 </div>
@@ -383,7 +383,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Zomato Link</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="zomato" name="zomato" type="url" placeholder="eg: https://www.zomato.com/your_location/your_restaurant_name"  type="text">
+                                            <input class="form-control" id="zomato" name="zomato" type="url" placeholder="eg: https://www.zomato.com/your_location/your_restaurant_name"  type="text"><br>
                                         </div>
                                     </div>
                                 </div>
@@ -391,7 +391,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Facebook page</label>
                                         <div class="col-sm-8">
-                                            <input class="form-control" id="facebook" name="facebook" type="url" placeholder="eg: https://www.facebook.com/your_restaurant_name"  type="text">
+                                            <input class="form-control" id="facebook" name="facebook" type="url" placeholder="eg: https://www.facebook.com/your_restaurant_name"  type="text"><br>
                                         </div>
                                     </div>
                                 </div>
@@ -921,6 +921,11 @@ if(isset($_POST['zone_submitted']))
             font-size: 15px;
             font-weight: 130%;
             color: #08c;
+            }
+
+            label.error {
+                display: block;
+                margin-left: 5em;
             }
             
          /*   .navbar-nav li:nth-child(1) > a.active{  
