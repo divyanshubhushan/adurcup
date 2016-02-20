@@ -23,7 +23,7 @@ require_once("includes/post_login.php");
     <meta name="description" content="shop your disposables with best quality at affordable prices."/>
     <meta name="keywords" content="shop your disposables, disposables,disposables at affordable prices, adurcup, adurcup.com"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <base href="http://www.adurcup.com/" />
+    <!-- <base href="http://www.adurcup.com/" /> -->
     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" >
 
       <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
@@ -33,7 +33,10 @@ require_once("includes/post_login.php");
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.css" rel="stylesheet">
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/login_popup.css">
-
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+        
+        
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -53,8 +56,8 @@ require_once("includes/post_login.php");
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
     <link href="css/minified.css" rel="stylesheet">
-
-
+    <link href="css/slick-theme.css" rel="stylesheet">
+    <!-- <link href="css/slick.css" rel="stylesheet"> -->
 
     <style>
     .product{
@@ -76,15 +79,21 @@ require_once("includes/post_login.php");
                 }
 
     }
+
+    @media (max-width: 768px) {
+       /* .mulimages { display: none; }
+        .imgma{width:300px;}*/
+        .product-preview{width:300px;}
+    }
     
     .ad_info{
-    	margin-left:5px;
-    	width:20px;
-    	height:20px;
-   	line-height:20px !important;
-    	background-color : rgb(0, 136, 204);
-    	color : rgb(255, 255, 255);
-    	border-radius : 50% !important;
+      margin-left:5px;
+      width:20px;
+      height:20px;
+    line-height:20px !important;
+      background-color : rgb(0, 136, 204);
+      color : rgb(255, 255, 255);
+      border-radius : 50% !important;
     }
     
     
@@ -123,6 +132,7 @@ require_once("includes/post_login.php");
         cursor: pointer;
 
     }
+    th
     .spinner {
       width: 100px;
   }
@@ -158,6 +168,18 @@ require_once("includes/post_login.php");
       top: 0;
       left: 4px;
   }
+
+
+
+
+  /*.slick-prev:before, .slick-next:before { font-family: "slick"; font-size: 40px; line-height: 1; color: red; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }   
+
+.slick-prev:before { content: "‹"; }
+[dir="rtl"] .slick-prev:before { content: "›"; }
+
+[dir="rtl"] .slick-next { left: -10px; top: 70px; right: auto; }
+.slick-next:before { content: "›"; }
+[dir="rtl"] .slick-next:before { content: "‹"; }*/
 
   </style>
 
@@ -385,20 +407,59 @@ require_once("includes/post_login.php");
                         <div class="row add-cart" data-product=".product" data-thumbnail=".entry-media .thumb" data-url=".entry-title > a" data-title=".entry-title" data-price=".entry-price > .price">
                             <!-- PRODUCT PREVIEW -->
                             <div class="col-md-12 product" data-product-id="<?=$pro['id']?>" style=" box-shadow:none">
-                                <div class="col-md-12 col-md-5">
+                                <div class="col-md-12 col-md-5" style="margin: 0 220px 0 0;width:22%">
 
-                                    <div class="product-preview " >
+                                    <div class="product-preview" >
                                         <div class="images_ss">
                                             <div class="thumbs_ss-container">
                                               
-                                             <div class="blowup" style="display:inline-block;background:#e9e9e9;border-radius:7px;">
-                                                <div class="big-image entry-media" style="text-align:left">
-                                                 <a style="width:355px;height:430px;" href="images/product/<?=$pro['image_src']?>" data-toggle="lightbox">
-                                                    <img src="images/product/<?=$pro['image_src']?>"  alt="Disposable Image" class="thumb" width="355px" height="430px">
-                                                </a>
+                                             <div class="blowup" style="display:inline-block;background:#fff;border-radius:7px;width:350px;">
+                                                <div class="big-image entry-media" style="text-align:left;background:#fff;">
+                                                 <a style="width:350px;height:400px;" href="images/product/<?=$pro['image_src']?>" data-toggle="lightbox">
+                                                    <img src="img/small/<?=$pro['image_src']?>" id="zoom_03" class="imgma" alt="Disposable Image" data-zoom-image="img/big/<?=$pro['image_src']?>">
+                                                  </a>
 
 
-                                            </div>
+                                                </div>
+                                            
+                                            <?php
+                                              //require_once("include/membersite_config.php");
+                                              if($fgmembersite->productImages())
+                                              {
+                                                $proimg = $fgmembersite->productImages();
+                                                //print_r($proimg);
+                                                echo "<div id='gallery_01' data-slick='{\"arrows\":true}' class='mulimages' style='width=350px;float=left;'>";
+                                                foreach ($proimg as $imagepro => $value) {
+                                                  # code...
+                                                  echo "
+                                                    
+                                                      <a href='#' class='elevatezoom-gallery' data-update='' data-image='img/small/".$value."' data-zoom-image='img/big/".$value."'>
+                                                      <img src='img/small/".$value."' width='80'></a>
+                                                    
+                                                  ";
+                                                }
+                                                echo "</div>";
+                                                /*<a href="#" class="elevatezoom-gallery" data-update="" data-image="img/small/<?=$pro['image_src']?>" data-zoom-image="img/big/<?=$pro['image_src']?>">
+                                                  <img src="img/small/<?=$pro['/'image_src'/']?>" width="80"></a>*/
+                                              }else{
+                                                echo "<div id='elseTest'>
+                                                  No image return
+                                                </div>";
+                                              }
+
+                                            ?>
+                                              <!-- <a href="#" class="elevatezoom-gallery" data-update="" data-image="img/small/PI6A3264.jpg" data-zoom-image="img/big/PI6A3264.jpg">
+                                              <img src="img/small/PI6A3264.jpg" width="80"></a>
+
+                                              <a href="#" class="elevatezoom-gallery" data-update="" data-image="img/small/PI6A3264.jpg" data-zoom-image="img/big/PI6A3264.jpg">
+                                              <img src="img/small/PI6A3264.jpg" width="80"></a> -->
+
+                                             <!--  <a href="#" class="elevatezoom-gallery" data-update="" data-image="img/small/PI6A3264.jpg" data-zoom-image="img/big/PI6A3264.jpg">
+                                              <img src="img/small/PI6A3264.jpg" width="100"></a>
+ -->
+
+                                                  
+                                            
                                         </div>
 
                                     </div>
@@ -440,8 +501,8 @@ require_once("includes/post_login.php");
                                             <ul class="entry-meta unstyled" style="margin:0">
 
                                                 <li style="border-bottom:1px solid #e9e9e9">
-                                                    <span class="key" style="width:140px;color:#999;font-size:14px;">Description:</span>
-                                                    <span class="value" style="color:#0099cc;font-size:14px;"><?=$pro['description']?></span>
+                                                    <span class="key" style="width:140px;color:#999;font-size:14px;">Product Id:</span>
+                                                    <span class="value" style="color:#0099cc;font-size:14px;"><?=$pro['id']?></span>
                                                 </li>
                                                 <li style="border-bottom:1px solid #e9e9e9">
                                                     <span class="key" style="width:140px;color:#999;font-size:14px;">Customization:</span>
@@ -544,12 +605,12 @@ require_once("includes/post_login.php");
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label"  style="padding-top:7px;padding-right:0;padding-left:0;font-size:14px;color:#333" for="type">Open for ads</label>
                                                  <div class="col-md-6">
-                                                  		<label class="radio-inline">
-                                                  			<input type="radio" name="ad_option" value="yes">Yes
-                                                  		</label>
-								<label class="radio-inline">
-									<input type="radio" name="ad_option" value="no">No
-								</label>
+                                                      <label class="radio-inline">
+                                                        <input type="radio" name="ad_option" value="yes">Yes
+                                                      </label>
+                <label class="radio-inline">
+                  <input type="radio" name="ad_option" value="no">No
+                </label>
                                                            
                                                    
                                                 </div>
@@ -580,8 +641,8 @@ require_once("includes/post_login.php");
                               </div>
                               </div>
                               
-                              <div class="col-md-12 col-md-7">
-                                <ul class="inline-li li-m-r-l m-t-lg " style="margin-top:10px">
+                              <div class="col-md-12">
+                                <ul class="inline-li li-m-r-l m-t-lg " style="margin-top:10px; margin-left:460px;">
                                   <?php 
                                   if($restloggedin == 1)
                                   {
@@ -693,16 +754,52 @@ require_once("includes/post_login.php");
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.3/js/bootstrap-select.js"></script>
           <script src="dist/js/bootbox.min.js"></script>
-
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
+        <script src='js/elevatezoom.js'></script>
+        <script src='js/validate.js'></script>
+        <script src='js/slick.js'></script>
         <!-- Essential Javascripts -->
         <script src="js/minified.min.js"></script>
         <!-- // Essential Javascripts -->
 
+
+        <style type="text/css">
+            #gallery_01 img{border:2px solid white;} 
+            .active img{
+              border:2px solid #333 !important;
+            } 
+          </style>
+          
+          
+          <script type="text/javascript">
+            $(document).ready(function () {
+              if (Modernizr.mq('only screen and (min-width: 768px)')) {
+                $("#zoom_03").elevateZoom({gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: "active", imageCrossfade: true, loadingIcon: "img/home/fancybox_loading.gif"}); 
+
+                $("#zoom_03").bind("click", function(e) {  
+                  var ez =   $('#zoom_03').data('elevateZoom');
+                  ez.closeAll(); //NEW: This function force hides the lens, tint and window 
+                  $.fancybox(ez.getGalleryList());
+                  return false;
+                }); 
+              }else{
+                if(Modernizr.mq('only screen and (max-width: 768px)')){
+                  $("#zoom_03").bind("click", function(e) {  
+                  var ez =   $('#zoom_03').data('elevateZoom');
+                  ez.closeAll(); //NEW: This function force hides the lens, tint and window 
+                  $.fancybox(ez.getGalleryList());
+                  return false;
+                });  
+                }
+              }
+          }); 
+
+        </script>
         <script type="text/javascript">
             
             $(document).ready(function() {
             
-            	var mq = window.matchMedia( "(min-width: 768px)" );
+              var mq = window.matchMedia( "(min-width: 768px)" );
                   if (!mq.matches) {
 
                       var wi = $(".entry-media").find('img');
@@ -755,7 +852,7 @@ require_once("includes/post_login.php");
                  });
 
                  $("#rest_reset_link").click(function(e){
-                 	e.preventDefault();
+                  e.preventDefault();
                     $("#rest_login").hide();
                      $("#rest_reset").show();
                      $(".modal-title").text('Reset Password');
@@ -765,6 +862,7 @@ require_once("includes/post_login.php");
                   
                      $("#rest_login_btn").show();
                      $("#rest_register_btn").hide();
+
 
                  });
 
@@ -792,6 +890,17 @@ require_once("includes/post_login.php");
                      $("#ad_register_btn").hide();
 
                  });
+
+
+                 $('#gallery_01').slick({
+                    infinite: true,
+                    dots: true,
+                    arrows:true,
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                  });
+
+                 
 
                  $("#ad_login_btn").click(function(){
                     $("#ad_login").show();
@@ -847,12 +956,27 @@ require_once("includes/post_login.php");
                     }
                   
                 });
-		$('#ad_info').tooltip();
-		
-		$('.dropdown-toggle').dropdown();
+    $('#ad_info').tooltip();
+    
+    $('.dropdown-toggle').dropdown();
                 
             });
         </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('.slider').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            dots: true,
+            /* Just changed this to get the bottom dots navigation */
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: true
+          });
+        });
+      </script>
         <!-- Particular Page Javascripts -->
         <script src="js/jquery.nouislider.js"></script>
         <script src="js/jquery.isotope.min.js"></script>

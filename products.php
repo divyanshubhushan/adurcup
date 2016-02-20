@@ -83,7 +83,19 @@ $db = new DB_FUNCTIONS();
         }
 
     </style>
-   
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+   <script>
+        $(document).ready(function() {
+          $('#s').keyup(function(){
+           var valThis = $(this).val().toLowerCase();
+            $('.products-wrapper .products-layout .product_item').each(function(){
+                var text = $(this).text().toLowerCase();
+                $(this).closest('.products-wrapper .products-layout .product_item')[ text.indexOf(valThis) !== -1 ? 'show' : 'hide' ]();            
+           });
+          });
+        });
+    </script>
     <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -285,7 +297,15 @@ $db = new DB_FUNCTIONS();
                             <!-- SIDEBAR -->
                             <aside class="col-xs-12 col-md-3" style="padding-left:0">
                                 <section class="sidebar push-up">
-                                
+                                    <div class="side-section-title" style="padding:10px 0px 4px 2px">
+                                        <form id="live-search" action="" class="styled" method="post">
+                                                                    <fieldset>
+                                                                        <input type="search" placeholder="Search Product..."  id="s" value="" style="width:250px;" />
+                                                                        
+<!--                                                                         <input type="button" value="Search"/> -->
+                                                                    </fieldset>
+                                         </form>
+                                    </div>  
                                     <!-- CATEGORIES -->
                                     <section class="side-section bg-white">
                                         <header class="side-section-header" style="background:#0099cc;border-radius:7px 7px 0 0">
@@ -351,6 +371,22 @@ $db = new DB_FUNCTIONS();
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <!-- <div class="pro_cat_title" style="padding:10px 0px 0 0px">                   
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseQuan">
+                                                                     <h4 class="panel-title">
+                                                                        <a href="#">
+                                                                            SIZES  <span class="iconfont-chevron-down " id="sizes_arrow_up_down" style="float:right;line-height:20px"></span>
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseQuan" class="panel-collapse collapse">
+                                                                     <span class="spanquancls" style="float:right;margin-right:10px;visibility:hidden;"><a href="javascript:;"><img src="images/reset.png" alt="reset" title="reset" /></a></span>
+                                                                    <?php /*include 'pageportion/quantity.php';  */?>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
 
                                                         
                                                        
@@ -422,6 +458,7 @@ $db = new DB_FUNCTIONS();
         <script type="text/javascript" src="js/jquery.form.min.js"></script>
         <script type="text/javascript" src="js/jquery.form.js"></script>
         <script src="js/select2.js"></script>
+        <script src="js/jquery.lazyload.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/ajax_script2.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
@@ -434,18 +471,20 @@ $db = new DB_FUNCTIONS();
 
         <!-- Essential Javascripts -->
         <script src="js/minified.min.js"></script>
+        <!--Search functionality -->
+        
         <!-- // Essential Javascripts -->
 
         <script type="text/javascript">
             
             $(document).ready(function() {
             
-            	var scrollTop = localStorage.getItem('scrollTop');
-			if (scrollTop !== null) {
-			        $(window).scrollTop(Number(scrollTop));
-			        localStorage.removeItem('scrollTop');
-			    }
-			    
+                var scrollTop = localStorage.getItem('scrollTop');
+            if (scrollTop !== null) {
+                    $(window).scrollTop(Number(scrollTop));
+                    localStorage.removeItem('scrollTop');
+                }
+                
 
 
                 function getresult(url) {
@@ -461,6 +500,7 @@ $db = new DB_FUNCTIONS();
                         },
                         success: function(data){
                         $("#productContainer").append(data);
+                        $("img.lazy").lazyload();
                         },
                         error: function(){
                            
@@ -513,6 +553,15 @@ $db = new DB_FUNCTIONS();
                     $("#size_arrow_up_down").addClass( "iconfont-chevron-up" );
                     $("#size_arrow_up_down").removeClass( "iconfont-chevron-down" );
                   });
+                  /*$("#collapseQuan").on("hide.bs.collapse", function(){
+
+                    $("#size_arrow_up_down").addClass( "iconfont-chevron-down" );
+                    $("#size_arrow_up_down").removeClass( "iconfont-chevron-up" );
+                  });
+                  $("#collapseQuan").on("show.bs.collapse", function(){
+                    $("#size_arrow_up_down").addClass( "iconfont-chevron-up" );
+                    $("#size_arrow_up_down").removeClass( "iconfont-chevron-down" );
+                  });*/
                  
                
                     
@@ -697,7 +746,15 @@ $db = new DB_FUNCTIONS();
         });
         if(pricearray=='') $('.spanpricecls').css('visibility','hidden');
         var price_checklist = "&price_range="+pricearray;
-        
+
+        /*var quanarray = new Array();       
+        $('input[name="quancheck"]:checked').each(function(){         
+            quanarray.push($(this).val());
+            $('.spanquancls').css('visibility','visible');     
+        });
+        if(quanarray=='') $('.spanquancls').css('visibility','hidden');
+        var quan_checklist = "&quancheck="+quanarray;
+ */       
         var main_string = brand_checklist+size_checklist+color_checklist+price_checklist;
         main_string = main_string.substring(1, main_string.length)
         //alert(main_string);
@@ -766,6 +823,14 @@ $db = new DB_FUNCTIONS();
         });
         if(pricearray=='') $('.spanpricecls').css('visibility','hidden');
         var price_checklist = "&price_range="+pricearray;
+
+        /*var quanarray = new Array();       
+        $('input[name="quancheck"]:checked').each(function(){         
+            quanarray.push($(this).val());
+            $('.spanquancls').css('visibility','visible');     
+        });
+        if(quanarray=='') $('.spanquancls').css('visibility','hidden');
+        var quan_checklist = "&quancheck="+quanarray;*/
         
         var main_string = brand_checklist+size_checklist+color_checklist+price_checklist;
         main_string = main_string.substring(1, main_string.length)
@@ -844,6 +909,11 @@ $db = new DB_FUNCTIONS();
         showValues();
         $('.spanpricecls').css('visibility','hidden');
     });
+    /*$(".spanquancls").click(function(){
+        $('.quancheck').removeAttr('checked'); 
+        showValues();
+        $('.spanquancls').css('visibility','hidden');
+    });*/
     $(".clear_filters").click(function(){
         $('#productCategoryLeftPanel').find('input[type=checkbox]:checked').removeAttr('checked');
         $('#productCategoryLeftPanel').find('input[type=radio]:checked').removeAttr('checked');
@@ -877,6 +947,11 @@ $db = new DB_FUNCTIONS();
         showValues();
         $('.spanpricecls').css('visibility','hidden');
     });
+    /*$(".spanquancls").click(function(){
+        $('.quancheck').removeAttr('checked'); 
+        showValues();
+        $('.spanquancls').css('visibility','hidden');
+    });*/
     $(".clear_filters").click(function(){
         $('#productCategoryLeftPanel').find('input[type=checkbox]:checked').removeAttr('checked');
         $('#productCategoryLeftPanel').find('input[type=radio]:checked').removeAttr('checked');
