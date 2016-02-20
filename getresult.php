@@ -10,7 +10,7 @@ if($fgmembersite->CheckRestLogin())
 else{
    $loggedin = 0;
 }
-$sql = "SELECT * from tbl_products";
+$sql = "SELECT * from updatedtables WHERE active='yes'";
 $page = 1;
 if(!empty($_GET["page"])) {
 $page = $_GET["page"];
@@ -32,24 +32,25 @@ $output .= '<input type="hidden" class="pagenum" value="' . $page . '" /><input 
 foreach($pro as $k=>$v) {
 $output .= '<a href="products/'.$pro[$k]["ProductID"].'" >
 <div class="col-xs-6 col-md-3 product_item" style="box-shadow:none;padding:0px;border-radius:4px;cursor:pointer;border:none">
-   <ul class="grid cs-style-3">
-      <li>
-         <figure style="border:1px solid #ccc">
-            <img src="images/product/' .$pro[$k]["photo"]. '" alt="'.$pro[$k]["Title"].'">
-            <p align="center" class="name_hover" style="background:white;padding:2px 0;margin:0">'.$pro[$k]["Title"].'</p>
-            <figcaption align="center">';
-            if($loggedin == 1){
-               $output .= '<span> Rs. '.$pro[$k]["Price"].'</span>';
-            }
-            else{
-            	$output .= '<span data-toggle="tooltip" data-placement="top" title="Please login to see the prices"><i  class="iconfont-lock"></i></span>';
-            }
-            $output .= '<h5>'.$pro[$k]["Title"].'</h5>
-               <p>Size : '.$pro[$k]["size"].'</p>
-            </figcaption>
-         </figure>
-      </li>
-   </ul>
+	<ul class="grid cs-style-3">
+		<li>
+			<figure style="border:1px solid #ccc">
+				<img class="lazy" src="images/product/' .$pro[$k]["image_src"]. '" width="640" height="480">
+				<p align="center" class="name_hover" style="background:white;padding:2px 0;margin:0">'.$pro[$k]["title"].'</p>
+				<figcaption align="center">';
+					if($loggedin == 1){
+			            $output .= '<span> Rs. '.$pro[$k]["our_price"].'</span>';
+			        }
+			        else{
+			           	$output .= '<span data-toggle="tooltip" data-placement="top" title="Please login to see the prices"><i  class="iconfont-lock"></i></span>';
+			        }
+			        $output .= '<h5>'.$pro[$k]["title"].'</h5>
+			        <p>Size : '.$pro[$k]["volume"].'</p>
+					
+				</figcaption>
+			</figure>
+		</li>
+	</ul>
 </div>
 </a>';
 
