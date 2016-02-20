@@ -5,7 +5,7 @@
 		foreach($brandarray as $brand) {
 			$brandname = $brand['brand'];		
 			$brand_id = $brand['id'];
-			$number_in_category = $db->number_in_category('tbl_products',$brand_id, 'Brand');
+			$number_in_category = $db->number_in_category('updatedtables',$brand_id, 'brand_id');
 		?>		
 		<ul style="padding:0">
 			<input type="checkbox" id="brand-<?=strtolower($brandname);?>" name="bcheck" class="bcheck" value="<?=$brand['id']?>" checkboxname="<?=$brandname?>" />
