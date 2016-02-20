@@ -12,6 +12,7 @@ else{
 $bcheck = $_REQUEST['bcheck'];
 $scheck = $_REQUEST['scheck'];
 $price_range = $_REQUEST['price_range'];
+//$quan = $_REQUEST['quancheck'];
 
 $WHERE = array(); $inner = $w = '';
 
@@ -20,18 +21,38 @@ if(!empty($price_range)) {
 	$WHERE[] = "(t1.Price between $data3[0] and $data3[1])";
 }
 
+
+
 if(!empty($bcheck)) {		
 	if(strstr($bcheck,',')) {
 		$data1 = explode(',',$bcheck);
 		$barray = array();
 		foreach($data1 as $c) {
-			$barray[] = "t1.Brand = $c";
+			$barray[] = "t1.brand_id = $c";
 		}
 		$WHERE[] = '('.implode(' OR ',$barray).')';
 	} else {
-		$WHERE[] = '(t1.Brand = '.$bcheck.')';
+		$WHERE[] = '(t1.brand_id = '.$bcheck.')';
 	}
 }
+
+/*if(!empty($quan)){
+	if(strstr($bcheck,',')) {
+		$data1 = explode(',',$quan);
+		$qarray = array();
+		foreach ($data1 as $q) {
+			$qarray[] = "t3.Sizes = $q";
+		}
+		$WHERE[] = '('.implode(' OR ',$qarray).')';
+	}else{
+		$WHERE[] = '(t3.Sizes = '.$quan.')';
+	}
+
+	$inner = 'INNER JOIN disposables_details AS t3 ON t1.ProductID = t3.id';
+}
+
+	$w = implode(' AND ',$WHERE);
+	if(!empty($w)) $w = 'WHERE '.$w;*/
 
 
 if(!empty($scheck)) {
@@ -54,7 +75,7 @@ if(!empty($scheck)) {
 	
 	
 	//echo "SELECT DISTINCT  t1 . * FROM  `tbl_products` AS t1 $inner $w";
-	$query = mysql_query("SELECT DISTINCT  t1 . * FROM  `tbl_products` AS t1 $inner $w");
+	$query = mysql_query("SELECT DISTINCT  t1 . * FROM  `updatedtables` AS t1 $inner $w");
 	if(mysql_num_rows($query)>0) {
 		while($pro = mysql_fetch_assoc($query)) {
 			$productPhoto = $db->getproductPhoto($pro['ProductID']);
@@ -65,13 +86,13 @@ if(!empty($scheck)) {
 				<ul class="grid cs-style-3">
 					<li>
 						<figure style="border:1px solid #ccc">
-							<img src="images/product/<?=$productPhoto?>"  class="img-responsive">
-							<p align="center" class="name_hover" style="background:white;padding:2px 0;margin:0"><?=$pro['Title']?></p>
+							<img class="lazy" src="images/product/<?=$pro['image_src']?>"  width="640" height="480">
+							<p align="center" class="name_hover" style="background:white;padding:2px 0;margin:0"><?=$pro['title']?></p>
 							<figcaption align="center">
-								<h5><?=$pro['Title']?></h5>
+								<h5><?=$pro['title']?></h5>
 								<?php
 									if($loggedin == 1){
-								               echo "<span> Rs. ".$pro['Price']."</span>";
+								               echo "<span> Rs. ".$pro['our_price']."</span>";
 								            }
 								            else{
 								            	echo "<span data-toggle='tooltip' data-placement='top' title='Please login to see the prices'><i  class='iconfont-lock'></i></span>"; 

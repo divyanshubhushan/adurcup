@@ -101,7 +101,7 @@ jQuery(function($) {
 									<button type="button"' + button + ' class="up"><i class="iconfont-caret-up inline-middle"></i></button> \
 								</div> \
 							</td> \
-							<td class="hidden-xs"><strong class="text-bold row-total">₹' + Math.round(temp) + '</strong></td> \
+							<td "><strong class="text-bold row-total">₹' + Math.round(temp) + '</strong></td> \
 							<td class="hidden-xs"><button type="button" class="close" aria-hidden="true">×</button></td> \
 						</tr>');
 			
