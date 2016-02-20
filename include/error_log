@@ -1,0 +1,36 @@
+[09-May-2015 06:08:30 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/adurcupc/public_html/include/ajax_refresh.php:11
+Stack trace:
+#0 /home/adurcupc/public_html/include/ajax_refresh.php(11): PDO->__construct('mysql:host=loca...', 'root', 'harshit', Array)
+#1 /home/adurcupc/public_html/include/ajax_refresh.php(14): connect()
+#2 {main}
+  thrown in /home/adurcupc/public_html/include/ajax_refresh.php on line 11
+[27-May-2015 03:47:24 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/adurcupc/public_html/include/ajax_refresh2.php:11
+Stack trace:
+#0 /home/adurcupc/public_html/include/ajax_refresh2.php(11): PDO->__construct('mysql:host=loca...', 'root', 'harshit', Array)
+#1 /home/adurcupc/public_html/include/ajax_refresh2.php(14): connect()
+#2 {main}
+  thrown in /home/adurcupc/public_html/include/ajax_refresh2.php on line 11
+[27-May-2015 03:47:24 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/adurcupc/public_html/include/ajax_refresh2.php:11
+Stack trace:
+#0 /home/adurcupc/public_html/include/ajax_refresh2.php(11): PDO->__construct('mysql:host=loca...', 'root', 'harshit', Array)
+#1 /home/adurcupc/public_html/include/ajax_refresh2.php(14): connect()
+#2 {main}
+  thrown in /home/adurcupc/public_html/include/ajax_refresh2.php on line 11
+[27-May-2015 03:47:24 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/adurcupc/public_html/include/ajax_refresh2.php:11
+Stack trace:
+#0 /home/adurcupc/public_html/include/ajax_refresh2.php(11): PDO->__construct('mysql:host=loca...', 'root', 'harshit', Array)
+#1 /home/adurcupc/public_html/include/ajax_refresh2.php(14): connect()
+#2 {main}
+  thrown in /home/adurcupc/public_html/include/ajax_refresh2.php on line 11
+[27-May-2015 03:47:25 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/adurcupc/public_html/include/ajax_refresh2.php:11
+Stack trace:
+#0 /home/adurcupc/public_html/include/ajax_refresh2.php(11): PDO->__construct('mysql:host=loca...', 'root', 'harshit', Array)
+#1 /home/adurcupc/public_html/include/ajax_refresh2.php(14): connect()
+#2 {main}
+  thrown in /home/adurcupc/public_html/include/ajax_refresh2.php on line 11
+[27-May-2015 03:47:32 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/adurcupc/public_html/include/ajax_refresh2.php:11
+Stack trace:
+#0 /home/adurcupc/public_html/include/ajax_refresh2.php(11): PDO->__construct('mysql:host=loca...', 'root', 'harshit', Array)
+#1 /home/adurcupc/public_html/include/ajax_refresh2.php(14): connect()
+#2 {main}
+  thrown in /home/adurcupc/public_html/include/ajax_refresh2.php on line 11

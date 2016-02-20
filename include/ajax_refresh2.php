@@ -7,9 +7,11 @@
 */
 
 // PDO connect *********
- 
-require("db_config.php"); 
+function connect() {
+    return new PDO('mysql:host=localhost;dbname=adurcup_stuffbin', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+}
 
+$pdo = connect();
 $keyword = '%'.$_POST['keyword'].'%';
 /*echo "<script type='text/javascript'>alert('$length');</script>";*/
 
@@ -17,7 +19,7 @@ $keyword = '%'.$_POST['keyword'].'%';
 
 
 
-	$sql = "SELECT * FROM restaurants WHERE LOWER(rest_name) LIKE (:keyword) OR LOWER(main_address) LIKE (:keyword)  ORDER BY id ASC LIMIT 0, 7";
+	$sql = "SELECT * FROM adurzone WHERE LOWER(restaurant_name) LIKE (:keyword) OR LOWER(address) LIKE (:keyword)  ORDER BY id ASC LIMIT 0, 7";
 
 			$query = $pdo->prepare($sql);
 			$query->bindParam(':keyword', $keyword, PDO::PARAM_STR);
@@ -29,18 +31,18 @@ $keyword = '%'.$_POST['keyword'].'%';
 			}
 			foreach ($list as $rs) {
 				// put in bold the written text
-				$rest_name = str_replace($_POST['keyword'], '<span style="font-weight:800">'.$_POST['keyword'].'</span>', $rs['rest_name']);
-				$location = str_replace($_POST['keyword'], '<span style="font-weight:800">'.$_POST['keyword'].'</span>', $rs['main_address']);
-				$temp_fill_rest_name = json_encode($rs['rest_name']);
-				$fill_rest_name =htmlspecialchars($temp_fill_rest_name, ENT_QUOTES) ;
-				$fill_main_address = json_encode($rs['main_address']);
-				$fill_zomato_link = json_encode($rs['rest_link']);
-				$fill_telephone = json_encode($rs['telephone']);
-				$fill_postalcode = json_encode($rs['postalcode']);
+				$reataurant_name = str_replace($_POST['keyword'], '<span style="font-weight:800">'.$_POST['keyword'].'</span>', $rs['restaurant_name']);
+				$location = str_replace($_POST['keyword'], '<span style="font-weight:800">'.$_POST['keyword'].'</span>', $rs['address']);
+				$temp_fill_reataurant_name = json_encode($rs['restaurant_name']);
+				$fill_reataurant_name =htmlspecialchars($temp_fill_reataurant_name, ENT_QUOTES) ;
+				$fill_main_address = json_encode($rs['address']);
+				$fill_zomato_link = json_encode($rs['zomato']);
+				$fill_telephone = json_encode($rs['contact']);
+				$fill_postalcode = json_encode($rs['pincode']);
 				$sub_location = json_encode($rs['sub_location']);
-				$cost42 =  json_encode($rs['cost42']);
+				$cost42 =  json_encode($rs['cost_for_2']);
 				preg_match_all('!\d+!', $cost42, $cost_42);
-				$final_cost = $cost_42[0][0];
+				$final_cost = $cost42[0][0];
 				
 
 			
@@ -48,7 +50,7 @@ $keyword = '%'.$_POST['keyword'].'%';
 
 
 				// add new option
-			echo "<li align='left' onclick='pre_fill_form($fill_rest_name,$fill_main_address,$fill_zomato_link,$fill_telephone,$fill_postalcode,$sub_location,$final_cost)'> $rest_name ,<span class='text-muted' style='font-size:12px'> $location </span></li>";
+			echo "<li align='left' onclick='pre_fill_form($fill_reataurant_name,$fill_main_address,$fill_zomato_link,$fill_telephone,$fill_postalcode,$sub_location,$final_cost)'> $reataurant_name ,<span class='text-muted' style='font-size:12px'> $location </span></li>";
 
 			}
 

@@ -1979,7 +1979,25 @@ class FGMembersite
             $this->HandleError("Wrong confirm code.");
             return false;
         }
-        
+        $row = mysql_fetch_assoc($result);
+        $user_rec['applicant_name'] = $row['applicant_name'];
+        $user_rec['email']= $row['email'];
+         $user_rec['company_name']= $row['company_name'];
+          $user_rec['location']= $row['location'];
+           $user_rec['sublocation']= $row['sublocation'];
+            $user_rec['address']= $row['address'];
+             $user_rec['type']= $row['type'];
+              $user_rec['dimension']= $row['dimension'];
+               $user_rec['cost']= $row['cost'];
+                $user_rec['branding_high']= $row['branding_high'];
+                 $user_rec['branding_medium']= $row['branding_medium'];
+                  $user_rec['branding_low']= $row['branding_low'];
+                   $user_rec['consumer_type']= $row['consumer_type'];
+                   $user_rec['peak_seasons']= $row['peak_seasons'];
+                   $user_rec['peak_hours']= $row['peak_hours'];
+                   $user_rec['phone']= $row['phone'];
+                    $user_rec['confirmcode']= $row['confirmcode'];
+                     $user_rec['adminconfirmcode']= $row['adminconfirmcode'];
         
 
 

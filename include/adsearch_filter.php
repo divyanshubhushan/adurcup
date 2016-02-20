@@ -1,14 +1,7 @@
 <?php
-/*
-* Author : Ali Aboussebaba
-* Email : bewebdeveloper@gmail.com
-* Website : http://www.bewebdeveloper.com
-* Subject : Autocomplete using PHP/MySQL and jQuery
-*/
 
-// PDO connect *********
 function connect() {
-    return new PDO('mysql:host=localhost;dbname=adurcupc_stuffbin', 'adurcupc', '1its2n@t3secret', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+    return new PDO('mysql:host=localhost;dbname=adurcup_stuffbin', 'root', 'harshit', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 }
 
 $pdo = connect();
