@@ -8,7 +8,7 @@
                                                         <?php echo isset($response) ? $response: '';?>
                                                         <!-- CONTACT FORM ALERTS -->
                                                         <div class="alert alert-success" id="mail_sent" style="display: none;">
-                                                          <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                          <button type="button" class="close" data-dismiss="alert">x</button>
                                                           <div class="alert-inner">
                                                             <strong>Thanks,</strong> Your Password is reset successfully. Check your mail.
                                                           </div>
@@ -16,7 +16,7 @@
                                                         <!-- /success msg -->
                                                         <!-- CONTACT FORM ALERTS -->
                                                         <div class="alert alert-warning" id="email_not_found" style="display: none;">
-                                                          <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                          <button type="button" class="close" data-dismiss="alert">x</button>
                                                           <div class="alert-inner">
                                                             <strong>Sorry!</strong> Email not found.
                                                           </div>
@@ -24,7 +24,7 @@
                                                         <!-- /success msg -->
                                                         <!-- CONTACT FORM ALERTS -->
                                                         <div class="alert alert-danger" id="reset_failure" style="display: none;">
-                                                          <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                          <button type="button" class="close" data-dismiss="alert">x</button>
                                                           <div class="alert-inner">
                                                             <strong>Error!</strong>Please try again.
                                                           </div>

@@ -200,7 +200,7 @@ if(isset($_POST['zone_submitted']))
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Address</label>
                                         <div class="col-sm-8">
-                                            <textarea class="form-control" id="address" name="address" placeholder="eg:M13, Connaught Place , Pincode:324009" required="" rows="2"></textarea>
+                                            <textarea class="form-control" id="address" name="address" placeholder="eg:M13, Connaught Place , New Delhi" required="" rows="2"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -588,7 +588,7 @@ if(isset($_POST['zone_submitted']))
                                 <div class="row">
                                 
                                     <div class="col-md-12" style="text-align:center;padding-bottom:20px">
-                                        <label style="font-size:18px" >Customer Engagements</label>
+                                        <label style="font-size:18px" >Customers Engagements</label>
                                     </div>
                                         
                                     
